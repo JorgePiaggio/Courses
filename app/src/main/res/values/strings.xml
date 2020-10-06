@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Datos del Contacto</string>
+<!--    <string name="name"></string>-->
+<!--    <string name="mail"></string>-->
+<!--    <string name="phone"></string>-->
+<!--    <string name="desc"></string>-->
+<!--    <string name="nacimiento"></string>-->
+
+    <string name="pname">nombre</string>
+    <string name="pmail">mail</string>
+    <string name="pphone">telefono</string>
+    <string name="pdesc">descripcion</string>
+    <string name="pnacimiento">fecha</string>
+
+    <string name="sig">Siguiente</string>
+    <string name="back">Editar Datos</string>
+    <string name="nombre">Nombre</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="email">Mail</string>
+    <string name="telefono">Telefono</string>
+    <string name="imgdes">Descripcion img</string>
+</resources>
