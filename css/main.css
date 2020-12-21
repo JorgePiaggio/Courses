@@ -1,0 +1,36 @@
+.jumbotron{
+    background-color: rgb(4, 57, 2);
+    color: rgb(205,205,255);
+}
+
+.card-hotel{
+    flex: 1 150px;
+    padding: 2px 10px 2px 10px;
+    margin-top: 20px;
+    background-color: rgba(111, 128, 144, 0.2);
+    border-radius: 5px;
+    margin: 0 5px 10px 5px;
+}
+
+.card-hotel h4{
+    color:rgb(189, 80, 68); 
+
+}
+
+
+.btn-reserva{
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+footer{
+    padding: 10px 10px 0 10px;
+    background-color: rgb(2, 41, 1);
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+address{
+    color: white;
+}
