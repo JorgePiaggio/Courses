@@ -1,7 +1,25 @@
 .jumbotron{
-    background-color: rgb(4, 57, 2);
+    margin-top: 50px;
     color: rgb(205,205,255);
+    position: relative;
+    text-align: center;
+    color: rgb(2, 41, 1); margin-bottom: 100px;
 }
+.bkgImage{
+    height: 200px;
+    width: 100%;
+    filter: opacity(70%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
 
 .card-hotel{
     flex: 1 150px;
@@ -14,7 +32,6 @@
 
 .card-hotel h4{
     color:rgb(189, 80, 68); 
-
 }
 
 
@@ -31,6 +48,28 @@ footer{
     margin-top: 20px;
 }
 
+footer a{
+color: white;
+text-decoration: none;
+}
+
+footer a:hover{
+    color: #28a745;
+    text-decoration: none;
+    }
+
+footer h3{
+    color: black;
+}
+
+
 address{
     color: white;
+}
+
+.bkgrey{
+    background-color: rgba(3, 62, 15, 0.434);
+    border-radius: 5px;
+    padding: 2px 20px 2px 20px;
+    margin-bottom: 20px;
 }
