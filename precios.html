@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
+    <script>  
+        $(function(){ 
+          $("#footer").load("footer.html");  
+        }); 
+    </script>
+    <title>Guia Hoteles</title>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <a class="navbar-brand" href="./index.html">Hoteles</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="navbar-item"><a class="nav-link" href="./index.html">Home</a></li>
+                <li class="navbar-item "><a class="nav-link" href="./about.html">Nosotros</a></li>
+                <li class="navbar-item active"><a class="nav-link" href="#">Precios</a></li>
+                <li class="navbar-item"><a class="nav-link" href="#">Términos & Condiciones</a></li>
+                <li class="navbar-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+
+    <div class="jumbotron" >
+        <img class="bkgImage" src="/images/le-meridien-hotel.jpg" alt="hotel">
+        <div class="left">
+            <h1>Hoteles</h1>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" aria-current="page"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Precios</li>
+            </ol>
+        </nav>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <th>Calidad</th>
+                    <th>Pinamar</th>
+                    <th>Mar del Plata</th>
+                    <th>Monte Hermoso</th>
+                    <th>Bariloche</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="oi oi-star"></span></td>
+                        <td>$ 890</td>
+                        <td>$ 790</td>
+                        <td>$ 790</td>
+                        <td>$ 1100</td>
+                    </tr>
+                    <tr>
+                        <td><span class="oi oi-star"></span><span class="oi oi-star"></span></td>
+                        <td>$ 990</td>
+                        <td>$ 890</td>
+                        <td>$ 890</td>
+                        <td>$ 1300</td>
+                    </tr>
+                    <tr>
+                        <td><span class="oi oi-star"></span><span class="oi oi-star"></span><span class="oi oi-star"></span></td>
+                        <td>$ 1190</td>
+                        <td>$ 1090</td>
+                        <td>$ 1090</td>
+                        <td>$ 1500</td>
+                    </tr>
+                    <tr>
+                        <td><span class="oi oi-star"></span><span class="oi oi-star"></span><span class="oi oi-star"></span><span class="oi oi-star"></span></td>
+                        <td>$ 1390</td>
+                        <td>$ 1290</td>
+                        <td>$ 1290</td>
+                        <td>$ 1700</td>
+                    </tr>
+                    <tr>
+                        <td><span class="oi oi-star"></span><span class="oi oi-star"></span><span class="oi oi-star"></span><span class="oi oi-star"></span><span class="oi oi-star"></span></td>
+                        <td>$ 1590</td>
+                        <td>$ 1490</td>
+                        <td>$ 1490</td>
+                        <td>$ 1900</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+
+    <div id="footer"></div> 
+
+</body>
+</html>
