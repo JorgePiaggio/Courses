@@ -1,5 +1,5 @@
 body{
-    background-color: rgbA(58, 94, 171,0.8);        
+    background-color: rgba(58, 94, 171,0.8);        
     color: white;
 }
 
@@ -64,7 +64,7 @@ body{
 
 }
 
-.card-header{
+.card-hotel .card-header{
     background-color: #343a40;    
     color: white;
     font-size: 12px;
@@ -73,6 +73,18 @@ body{
 
 .card-img-top{
     margin-bottom: 5px;
+}
+
+.card.tarjetas .card-body{
+    background-color:  #bcbaba;
+    margin: 0 0;
+    padding: 0 0;
+    color: white;        
+}
+
+.card.tarjetas{
+    margin: 0 0;   background-color:  #bcbaba;
+    padding: 0 0;
 }
 
 .bkgrey{
@@ -85,30 +97,34 @@ body{
 .bkgrey p{
     color: #6c757d;    
 }
+.info{
+    margin-top:10px;
+}
 
 /***************************** BUTTONS *******************************************/
 
-.btn-success{
+.btn-reserva{
     border-radius: 0;
     width: 100%;
-    background-color: rgb(58, 94, 171);    
-    border: none;
 }
-
+/*
 .btn-success:hover{    
     color: rgba(255, 255, 255, 0.516);
     background-color: rgb(48, 85, 164);    
     border: none;
 }
+.btn-success:active{    
+    color: rgba(255, 255, 255, 0.516);
+    background-color: rgb(48, 85, 164);    
+    border: none;
+}
+*/
 
-
-
-/***************************** TABS *******************************************/
+/***************************** TABS / PILLS *******************************************/
 
 .tabs li{
     border: 1px solid #343a40;
-    border-radius: 5%;
-    border-bottom: none;
+    border-radius: 0%;
 }
 
 .tabs a{
@@ -122,6 +138,11 @@ body{
     font-size: 22px;
     font-weight: bold;
 }
+.tab-content{
+    border: 1px solid #343a40;
+}
+
+
 
 /***************************** FOOTER *******************************************/
 
@@ -148,9 +169,9 @@ footer a:hover{
     }
 
 footer h3{
-    color: #6c757d;    
-    background-color: rgb(31, 34, 38);
+    background-color: rgb(5, 17, 43);
     margin-bottom: 20px;
+    padding: 12px 6px;
 }
 
 footer .icon{
