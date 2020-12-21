@@ -6,6 +6,7 @@
     <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
     <script>  
         $(function(){ 
@@ -20,7 +21,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
-        <a class="navbar-brand" href="./index.html">Hoteles</a>
+        <a class="navbar-brand" href="./index.html">Nova Hoteles</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,9 +41,9 @@
 
 
     <div class="jumbotron" >
-        <img class="bkgImage" src="/images/le-meridien-hotel.jpg" alt="hotel">
-        <div class="left">
-            <h1>Hoteles</h1>
+        <img class="bkgImage" src="/images/external.png" alt="hotel">
+        <div class="center">
+            <h1>Nova Hoteles</h1>
         </div>
     </div>
 
@@ -55,7 +56,7 @@
             </ol>
         </nav>
 
-        <div class="bkgrey">
+        <div class="card bkgrey">
             <div class="row">
                 <div class="col-sm-4">
                     <p>
@@ -79,9 +80,12 @@
         </div>
 
         <div class="d-flex flex-wrap flex-row">
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Hotel Malasia</h4>
+
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Malasia</div>
+                <div class="card-body">
+                    <h4 class="card-title">Hotel Malasia</h4>
+                    <img class="card-img-top" src="/images/1.jpg" alt="hotel pic">
                     <p>Proin sit amet aliquam purus, non pulvinar tortor.</p>
                 </div>
                 <div>
@@ -91,9 +95,11 @@
                 </div>
             </div>
 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Hotel Leeds</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Francia</div>
+                <div class="card-body">
+                    <h4 class="card-title">Hotel Leeds</h4>
+                    <img class="card-img-top" src="/images/2.jpg" alt="hotel pic">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Phasellus laoreet fringilla neque, nec varius est malesuada id.</p>
                 </div>
@@ -104,9 +110,11 @@
                 </div>
             </div>
                 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Gran Hotel</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Argentina</div>
+                <div class="card-body">
+                    <h4 class="card-title">Gran Hotel</h4>
+                    <img class="card-img-top" src="/images/3.jpg" alt="hotel pic">
                     <p>ellentesque sed efficitur metus. 
                         Maecenas finibus pretium odio in blandit. In dictum sit amet leo vel tristique. </p>
                 </div>
@@ -117,9 +125,11 @@
                 </div>
             </div>
                 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Hotel Lipsum</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Perú</div>
+                <div class="card-body">
+                    <h4 class="card-title">Hotel Lipsum</h4>
+                    <img class="card-img-top" src="/images/4.jpg" alt="hotel pic">
                     <p>Sed gravida dui magna, id placerat diam suscipit at.
                          Donec ornare nibh nec gravida ullamcorper. </p>
                 </div>
@@ -130,9 +140,11 @@
                 </div>
             </div>
                 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Hotel Atlas</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Grecia</div>
+                <div class="card-body">
+                    <h4 class="card-title">Hotel Atlas</h4>
+                    <img class="card-img-top" src="/images/5.jpg" alt="hotel pic">
                     <p>Quisque id tincidunt elit, eget sagittis dui. In vel ullamcorper turpis.</p>
                 </div>
                 <div>
@@ -142,9 +154,11 @@
                 </div>
             </div>
                 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Hotel California</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">USA</div>
+                <div class="card-body">
+                    <h4 class="card-title">Hotel California</h4>
+                    <img class="card-img-top" src="/images/6.jpg" alt="hotel pic">
                     <p>Donec ornare nibh nec gravida ullamcorper.</p>
                 </div>
                 <div>
@@ -154,9 +168,11 @@
                 </div>
             </div>
 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Hotel San Andrés</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Uruguay</div>
+                <div class="card-body">
+                    <h4 class="card-title">Hotel San Andrés</h4>
+                    <img class="card-img-top" src="/images/7.jpg" alt="hotel pic">
                     <p>Proin mi eros, aliquet et iaculis vitae, tempus sed lorem.</p>
                 </div>
                 <div>
@@ -166,9 +182,11 @@
                 </div>
             </div>
                 
-            <div class="card-hotel d-flex flex-column">
-                <div>
-                    <h4>Canada Hotel</h4>
+            <div class="card card-hotel d-flex flex-column">
+                <div class="card-header">Canada</div>
+                <div class="card-body">
+                    <h4 class="card-title">Canada Hotel</h4>
+                    <img class="card-img-top" src="/images/8.jpg" alt="hotel pic">
                     <p>Ut congue nunc leo, quis ultrices velit iaculis ut. Quisque eu fringilla lacus, ac hendrerit neque.</p>
                 </div>
                 <div>
