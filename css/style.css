@@ -1,0 +1,167 @@
+/***************************** BODY *******************************************/
+body {
+  background-color: rgba(58, 94, 171, 0.8);
+  color: white; }
+
+/***************************** JUMBOTRON *******************************************/
+.jumbotron {
+  margin-top: 50px;
+  color: #cdcdff;
+  position: relative;
+  text-align: center;
+  color: #022901;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  height: 200px; }
+
+.jumbotron h1 {
+  font-size: 8vw;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
+
+.bkgImage {
+  height: 200px;
+  width: 100%;
+  filter: opacity(70%);
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+/***************************** BREADCRUMB *******************************************/
+.breadcrumb {
+  background-color: #343a40; }
+
+.breadcrumb span {
+  color: #6c757d; }
+
+.breadcrumb a {
+  color: rgba(108, 117, 125, 0.612); }
+
+/***************************** CARDS *******************************************/
+.card-hotel {
+  flex: 1 250px;
+  margin-top: 20px;
+  background-color: #3f464d;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 0 5px 10px 5px;
+  text-align: justify; }
+
+.card-hotel h4 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #587dce;
+  font-size: 32px; }
+
+.card-hotel .card-header {
+  background-color: #343a40;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px; }
+
+.card-img-top {
+  margin-top: 0px;
+  margin-bottom: 5px; }
+
+.card.tarjetas {
+  background-color: inherit;
+  padding: 0 0; }
+
+.card.tarjetas button {
+  color: black; }
+
+.bkgrey {
+  background-color: #343a40;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 20px 2px 20px;
+  margin-top: 0px;
+  margin-bottom: 20px; }
+
+.bkgrey p {
+  color: #6c757d; }
+
+.info {
+  margin-top: 10px;
+  margin-bottom: 0px; }
+
+/***************************** BUTTONS *******************************************/
+.btn-reserva {
+  border-radius: 0;
+  width: 100%; }
+
+/*
+.btn-success:hover{    
+    color: rgba(255, 255, 255, 0.516);
+    background-color: rgb(48, 85, 164);    
+    border: none;
+}
+.btn-success:active{    
+    color: rgba(255, 255, 255, 0.516);
+    background-color: rgb(48, 85, 164);    
+    border: none;
+}
+*/
+/***************************** TABS / PILLS *******************************************/
+.tabs li {
+  border: 1px solid #343a40;
+  border-radius: 0%; }
+
+.tabs a {
+  color: #e1e1e1; }
+
+.tarj {
+  background-color: inherit;
+  border: none; }
+
+.tarj li {
+  font-size: 22px;
+  font-weight: bold; }
+
+.tab-content {
+  border: 1px solid #343a40; }
+
+/***************************** MODALS + TOOTLTIPS *******************************************/
+.black {
+  color: black;
+  font-size: 16px; }
+
+.recipient {
+  color: black; }
+
+/***************************** carousel *******************************************/
+.d-block.w-100 {
+  width: auto;
+  min-height: 325px;
+  max-height: 325px;
+  border-radius: 5%; }
+
+/***************************** FOOTER *******************************************/
+footer {
+  text-align: center;
+  padding: 10px 10px 0 10px;
+  background-color: #212529;
+  margin-top: 20px;
+  margin-bottom: 0px; }
+
+address {
+  color: white; }
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 0px; }
+
+footer a:hover {
+  color: rgba(111, 128, 144, 0.5);
+  text-decoration: none; }
+
+footer h3 {
+  background-color: #05112b;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 12px 6px; }
+
+footer .icon {
+  margin-right: 12px; }

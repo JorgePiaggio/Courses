@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
+    <!-- build:css dist/precios.css  -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script> 
-    <script>  
-        $(function(){ 
-          $("#footer").load("footer.html");  
-        }); 
-    </script>
+    <!-- endbuild -->
+
     <title>Guia Hoteles</title>
 </head>
 
@@ -30,7 +27,7 @@
                 <li class="navbar-item"><a class="nav-link" href="./index.html">Home</a></li>
                 <li class="navbar-item "><a class="nav-link" href="./about.html">Nosotros</a></li>
                 <li class="navbar-item active"><a class="nav-link" href="#">Precios</a></li>
-                <li class="navbar-item"><a class="nav-link" href="#">Términos & Condiciones</a></li>
+                <li class="navbar-item"><a class="nav-link" href="./terms.html">Términos & Condiciones</a></li>
                 <li class="navbar-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
             </ul>
         </div>
@@ -235,8 +232,74 @@
 
     </div>
 
-
-    <div id="footer"></div> 
-
 </body>
 </html>
+
+<footer>
+    
+    <div class="row">
+        <div class="col-sm-4 d-flex flex-column">
+            <a href="http://www.facebook.com">Facebook</a>
+            <a href="http://www.twitter.com">Twitter</a>
+            <a href="http://www.instagram.com">Instagram</a>
+        </div>
+
+        <div class="col-sm-4">
+            <address>
+                <h3> Headquarters </h3>
+                <p><span class="oi oi-home icon"></span>Calle Falsa 123, Pigüé, Argentina</p>
+                <p><span class="oi oi-phone icon"></span>+5429216717877</p>
+                <p><span class="oi oi-envelope-closed icon"></span>nova@hoteles.com</p>
+            </address>
+        </div>
+
+        <div class="col-sm-4 d-flex flex-column ">
+            <a href="./about.html">Nosotros</a>
+            <a href="./terms.html">Términos & Condiciones</a>
+            <a href="./contacto.html">Contacto</a>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- build:js dist/precios.js  -->
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <!--script src="node_modules/bootstrap/dist/bootstrap.min.js"></script-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(function(){
+            $("[data-toggle='tooltip']").tooltip();
+            $("[data-toggle='popover']").popover();
+            $('.carousel').carousel({
+                interval: 2500
+            });
+            $('#datosReserva').on('show.bs.modal', function(e){
+                console.log('el modal se está mostrando');
+                $('btnReserva').removeClass('btn-primary');                
+                $('btnReserva').removeClass('btn-reserva');
+               /* $('btnReserva').addClass('btn-outline-success');*/
+                $('btnReserva').prop('disabled',true);
+            });
+            $('#datosReserva').on('show.bs.modal', function(e){
+                console.log('el modal se mostró');
+            });
+            $('#datosReserva').on('hide.bs.modal', function(e){
+                console.log('el modal se oculta');
+                $('btnReserva').removeClass('btn-outline-success');
+                $('btnReserva').addClass('btn-primary');
+                $('btnReserva').addClass('btn-reserva');
+            });
+            $('#datosReserva').on('hidden.bs.modal', function(e){
+                console.log('el modal se ocultó');
+                $('btnReserva').prop('disabled',false);
+            });
+        })
+    </script>
+    <!-- endbuild -->
