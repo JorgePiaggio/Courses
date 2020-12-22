@@ -145,8 +145,11 @@ body{
 
 
 
-
-
+/***************************** MODALS + TOOTLTIPS *******************************************/
+.black{
+    color:black;
+    font-size: 16px;
+}
 .recipient{
     color:black;
 }
