@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
-    <!-- build:css dist/terms.css  -->
+    <!-- build:css css/index.css  -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
-    <!-- endbuild -->
+     <!-- endbuild -->
 
     <title>Guia Hoteles</title>
 </head>
@@ -142,10 +142,7 @@
     </div>
 </footer>
 
-
-    <!-- build:js dist/terms.js  -->
-
-    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <!-- build:js js/main.js  -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
@@ -153,34 +150,5 @@
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <!--script src="node_modules/bootstrap/dist/bootstrap.min.js"></script-->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        $(function(){
-            $("[data-toggle='tooltip']").tooltip();
-            $("[data-toggle='popover']").popover();
-            $('.carousel').carousel({
-                interval: 2500
-            });
-            $('#datosReserva').on('show.bs.modal', function(e){
-                console.log('el modal se está mostrando');
-                $('btnReserva').removeClass('btn-primary');                
-                $('btnReserva').removeClass('btn-reserva');
-               /* $('btnReserva').addClass('btn-outline-success');*/
-                $('btnReserva').prop('disabled',true);
-            });
-            $('#datosReserva').on('show.bs.modal', function(e){
-                console.log('el modal se mostró');
-            });
-            $('#datosReserva').on('hide.bs.modal', function(e){
-                console.log('el modal se oculta');
-                $('btnReserva').removeClass('btn-outline-success');
-                $('btnReserva').addClass('btn-primary');
-                $('btnReserva').addClass('btn-reserva');
-            });
-            $('#datosReserva').on('hidden.bs.modal', function(e){
-                console.log('el modal se ocultó');
-                $('btnReserva').prop('disabled',false);
-            });
-        })
-    </script>
+    <script src="js/index.js"></script>
     <!-- endbuild -->
