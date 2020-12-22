@@ -46,7 +46,7 @@ body{
 /***************************** CARDS *******************************************/
 
 .card-hotel{
-    flex: 1 200px;
+    flex: 1 250px;
     margin-top: 20px;
     background-color: #3f464d;
     border-top-left-radius: 5px;
@@ -75,18 +75,14 @@ body{
     margin-bottom: 5px;
 }
 
-.card.tarjetas .card-body{
-    background-color:  #bcbaba;
-    margin: 0 0;
-    padding: 0 0;
-    color: white;        
-}
-
 .card.tarjetas{
-    margin: 0 0;   background-color:  #bcbaba;
+    background-color: inherit;
     padding: 0 0;
 }
 
+.card.tarjetas button{
+    color: black;        
+}
 .bkgrey{
     background-color: #343a40;    
     color: white;
@@ -152,6 +148,19 @@ body{
 }
 .recipient{
     color:black;
+}
+
+
+
+
+/***************************** carousel *******************************************/
+
+
+.d-block.w-100{
+    width: auto;
+    min-height: 325px;
+    max-height: 325px;
+    border-radius: 5%;
 }
 
 /***************************** FOOTER *******************************************/
