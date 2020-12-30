@@ -1,5 +1,10 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 /* Serve Static Assets
 
@@ -77,8 +82,16 @@ app.get('/name', (req, res, next) => {
 });
 
 
+// Get Data from POST Requests
+
+app.post('/name', (req, res, next) => {
+  var firstName = req.body.first;
+  var lastName = req.body.last;
+  res.json({ name: `${firstName} ${lastName}`});
+  next();
+});
 
 
 
- module.exports = app;
+module.exports = app;
 
