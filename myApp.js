@@ -12,7 +12,6 @@ Your front-page should look a little better now! */
 app.use(express.static(__dirname + "/public"));
 
 
-
 // Implement a Root-Level Request Logger Middleware
 
 app.use(function middleware(req, res, next){
@@ -54,7 +53,29 @@ app.get("/json", (req, res) => {
 
 app.get("/", (req,res) => {
   res.sendFile(__dirname + "/views/index.html");
- })
+ });
+
+
+
+// Get Route Parameter Input from the Client
+
+app.get('/:word/echo', (req, res, next) => {
+  var word= req.params.word;
+  res.send({ echo: word });
+  next();
+});
+
+
+
+// Get Query Parameter Input from the Client
+
+app.get('/name', (req, res, next) => {
+  var firstName = req.query.first;
+  var lastName = req.query.last;
+  res.json({ name: `${firstName} ${lastName}`});
+  next();
+});
+
 
 
 
