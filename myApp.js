@@ -12,6 +12,7 @@ Your front-page should look a little better now! */
 app.use(express.static(__dirname + "/public"));
 
 
+
 // Implement a Root-Level Request Logger Middleware
 
 app.use(function middleware(req, res, next){
@@ -19,6 +20,16 @@ app.use(function middleware(req, res, next){
   next();
 });
 
+
+// Chain Middleware to Create a Time Server
+
+app.get("/now", (req, res, next) => {
+  req.time = new Date().toString();
+  next();
+},
+  (req, res) => {
+  res.send({ time: req.time });
+});
 
 
 /* Serve JSON on a Specific Route */ 
@@ -33,8 +44,6 @@ app.get("/json", (req, res) => {
       return res.json({message:myMessage})
     }
 });
-
-
 
 
 // console.log("Hello World");
