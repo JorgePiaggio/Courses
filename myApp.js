@@ -12,6 +12,15 @@ Your front-page should look a little better now! */
 app.use(express.static(__dirname + "/public"));
 
 
+// Implement a Root-Level Request Logger Middleware
+
+app.use(function middleware(req, res, next){
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next();
+});
+
+
+
 /* Serve JSON on a Specific Route */ 
 
 app.get("/json", (req, res) => {
