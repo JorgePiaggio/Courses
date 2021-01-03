@@ -141,6 +141,7 @@ Note: This may be tricky, if in your Schema, you declared favoriteFoods as an Ar
 without specifying the type (i.e. [String]). In that case, favoriteFoods defaults to Mixed type, 
 and you have to manually mark it as edited using document.markModified('edited-field'). See Mongoose documentation
 */
+
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
   
@@ -182,8 +183,21 @@ const findAndUpdate = (personName, done) => {
   })
 };
 
+
+/*
+Delete One Document Using model.findByIdAndRemove
+
+findByIdAndRemove and findOneAndRemove are like the previous update methods. 
+They pass the removed document to the db. As usual, use the function argument personId as the search key.
+Modify the removeById function to delete one person by the person's _id. 
+You should use one of the methods findByIdAndRemove() or findOneAndRemove().
+*/
+
 const removeById = (personId, done) => {
-  done(null /*, data*/);
+  Person.findByIdAndRemove({_id: personId}, (err, match) => {
+    if(err) return console.log(err);
+    done(null, match);
+  })
 };
 
 const removeManyPeople = (done) => {
