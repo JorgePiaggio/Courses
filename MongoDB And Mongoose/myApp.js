@@ -52,6 +52,7 @@ const createAndSavePerson = (done) => {
 
 /*
 MongoDB and Mongoose - Create Many Records with model.create()
+
 Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. 
 Model.create() takes an array of objects like [{name: 'John', ...}, {...}, ...] as the first argument, and saves them all in the db.
 
@@ -75,6 +76,7 @@ const createManyPeople = (arrayOfPeople, done) => {
 
 /*
 Use model.find() to Search Your Database
+
 In its simplest usage, Model.find() accepts a query document (a JSON object) as the first argument, then a callback. 
 It returns an array of matches. It supports an extremely wide range of search options. Read more in the docs.
 Modify the findPeopleByName function to find all the people having a given name, using Model.find() -> [Person]
@@ -91,6 +93,7 @@ const findPeopleByName = (personName, done) => {
 
 /*
 Use model.findOne() to Return a Single Matching Document from Your Database
+
 Model.findOne() behaves like .find(), but it returns only one document (not an array), 
 even if there are multiple items. It is especially useful when searching by properties that you have declared as unique.
 Modify the findOneByFood function to find just one person which has a certain food in the person's favorites, 
@@ -107,6 +110,7 @@ const findOneByFood = (food, done) => {
 
 /*
 Use model.findById() to Search Your Database By _id
+
 When saving a document, MongoDB automatically adds the field _id, and set it to a unique alphanumeric key. 
 Searching by _id is an extremely frequent operation, so Mongoose provides a dedicated method for it.
 Modify the findPersonById to find the only person having a given _id, using Model.findById() -> Person. 
@@ -116,13 +120,43 @@ const findPersonById = (personId, done) => {
   Person.findById({_id: personId}, (err, match) => {
     if(err) return console.log(err);
       done(null, match);
-  })
+  });
 };
 
+
+/*
+Perform Classic Updates by Running Find, Edit, then Save
+
+In the good old days, this was what you needed to do if you wanted to edit a document, 
+and be able to use it somehow (e.g. sending it back in a server response). 
+Mongoose has a dedicated updating method: Model.update(). It is bound to the low-level mongo driver. 
+It can bulk-edit many documents matching certain criteria, but it doesn’t send back the updated document, only a 'status' message. 
+Furthermore, it makes model validations difficult, because it just directly calls the mongo driver.
+
+Modify the findEditThenSave function to find a person by _id (use any of the above methods) 
+with the parameter personId as search key. 
+Add "hamburger" to the list of the person's favoriteFoods (you can use Array.push()). 
+Then - inside the find callback - save() the updated Person.
+Note: This may be tricky, if in your Schema, you declared favoriteFoods as an Array, 
+without specifying the type (i.e. [String]). In that case, favoriteFoods defaults to Mixed type, 
+and you have to manually mark it as edited using document.markModified('edited-field'). See Mongoose documentation
+*/
 const findEditThenSave = (personId, done) => {
   const foodToAdd = "hamburger";
+  
+  //find
+  Person.findById({_id: personId}, (err, match) => {
+    if(err) return console.log(err);
+    
+    //add fav food
+    match.favoriteFoods.push(foodToAdd);
 
-  done(null /*, data*/);
+    //save and return upd obj
+    match.save((err, updatedPerson) => {
+      if(err) return console.log(err);
+      done(null, updatedPerson);
+      });
+  });
 };
 
 const findAndUpdate = (personName, done) => {
