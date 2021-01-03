@@ -29,6 +29,17 @@ Juan.favoriteFoods = ['Asado', 'Sushi', 'Helado'];
 console.log(Juan);
 
 
+/*
+MongoDB and Mongoose - Create and Save a Record of a Model
+
+In this challenge you will have to create and save a record of a model.
+Within the createAndSavePerson function, create a document instance using the Person model constructor you built before. 
+Pass to the constructor an object having the fields name, age, and favoriteFoods. 
+Their types must conform to the ones in the personSchema. Then, call the method document.save() on the returned document instance. 
+Pass to it a callback using the Node convention. This is a common pattern; all the following CRUD methods 
+take a callback function like this as the last argument.
+*/
+
 const createAndSavePerson = (done) => {
   var Pedro = new Person({name: 'Pedro', surname: 'Chivilcoy', age: 23, favoriteFoods: ['Milanesa', 'Guiso', 'Choripan']});
   
@@ -38,9 +49,30 @@ const createAndSavePerson = (done) => {
     });
   };
 
+
+/*
+MongoDB and Mongoose - Create Many Records with model.create()
+Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. 
+Model.create() takes an array of objects like [{name: 'John', ...}, {...}, ...] as the first argument, and saves them all in the db.
+
+Modify the createManyPeople function to create many people using Model.create() with the argument arrayOfPeople.
+Note: You can reuse the model you instantiated in the previous exercise.
+*/
+
+var arrayOfPeople = [
+  {name: 'Teresa', surname: 'Juárez', age: 65, favoriteFoods: ['Vodka', 'Gin']},
+  {name: 'Francisco', surname: 'Gil', age: 42, favoriteFoods: ['Fish', 'Soup']},
+  {name: 'Lucía', surname: 'Cassano', age: 27, favoriteFoods: ['Fruits', 'Meat']}
+];
+
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
-};
+  Person.create(arrayOfPeople, function (err, people){
+    if(err) return console.log(err);
+    done(null, people);
+    });
+  };
+
+
 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
