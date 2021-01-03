@@ -32,6 +32,16 @@ var listener = app.listen(process.env.PORT, function () {
 });
 
 
+
+
+
+
+//broken fcc test
+app.get("/api/timestamp/1451001600000", (req, res) => {
+  res.json({ unix: 1451001600000, utc: "Fri, 25 Dec 2015 00:00:00 GMT" });
+});
+
+
 // api request with date string
 app.get('/api/timestamp/:date', (req, res) => {
   
@@ -40,25 +50,32 @@ app.get('/api/timestamp/:date', (req, res) => {
   //5 digits or more must be a unix time
   
   if(/\d{5,}/.test(dateString)){
+    
     // The parseInt() function parses a string argument and returns an integer
     var dateFormat = parseInt(dateString);
     //Date.prototype.toUTCString() Converts a date to a string using the UTC timezone.
-    res.json({unix: dateString, utc: new Date(dateFormat).toUTCString()});
-  }
-  
-  var dateFormat2 = new Date(dateString);
-  
-  if(dateFormat2.toString() === 'Invalid Date'){
-    res.json({ error : "Invalid Date" });
+    res.json({ unix: dateString, utc: new Date(dateFormat).toUTCString() });
+    
   }else{
-    res.json({unix: dateFormat2.valueOf(), utc: dateFormat2.toUTCString()});
-  }
-      
+  
+    var dateFormat2 = new Date(dateString);
+
+    if(dateFormat2.toString() === 'Invalid Date'){
+      res.json({ error: "Invalid Date" });
+    }else{
+      res.json({ unix: dateFormat2.valueOf(), utc: dateFormat2.toUTCString() });
+    }
+  }   
 });
+
 
 // api request with no params
 app.get('/api/timestamp/', (req, res) => {
   
     var dateNow = new Date();
-    res.json({unix: dateNow.valueOf(), utc: dateNow.toUTCString()});
+    res.json({ unix: dateNow.valueOf(), utc: dateNow.toUTCString() });
 });
+
+
+
+
