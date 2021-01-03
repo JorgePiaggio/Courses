@@ -82,7 +82,7 @@ Use the function argument personName as the search key.
 */
 
 const findPeopleByName = (personName, done) => {
-  Person.find({name: personName}, function(err, match){
+  Person.find({name: personName}, (err, match) => {
       if(err) return console.log(err);
       done(null, match);
   });
@@ -98,14 +98,25 @@ using Model.findOne() -> Person. Use the function argument food as search key.
 */
 
 const findOneByFood = (food, done) => {
-  Person.findOne({favoriteFoods: food}, function(err, match){
+  Person.findOne({favoriteFoods: food}, (err, match) => {
       if(err) return console.log(err);
       done(null, match);
   });
 };
 
+
+/*
+Use model.findById() to Search Your Database By _id
+When saving a document, MongoDB automatically adds the field _id, and set it to a unique alphanumeric key. 
+Searching by _id is an extremely frequent operation, so Mongoose provides a dedicated method for it.
+Modify the findPersonById to find the only person having a given _id, using Model.findById() -> Person. 
+Use the function argument personId as the search key.
+*/
 const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+  Person.findById({_id: personId}, (err, match) => {
+    if(err) return console.log(err);
+      done(null, match);
+  })
 };
 
 const findEditThenSave = (personId, done) => {
