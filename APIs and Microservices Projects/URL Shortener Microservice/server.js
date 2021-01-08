@@ -40,6 +40,18 @@ var urlSchema = new Schema({
 urlSchema.plugin(AutoIncrement, {inc_field: 'short_url'});
 var ShortURL = mongoose.model('ShortURL', urlSchema);
 
+
+//redirect to original url
+app.get('/api/shorturl/:short_url', (req, res) => {
+  var num= req.params.short_url;
+  ShortURL.findOne({"short_url": num}, (err, data) => {
+    if(err) res.json({error: 'No URL found'});
+    console.log('response: '+data);
+    res.redirect(data.original_url);
+  });
+});
+
+
 // save new url posted
 app.post("/api/shorturl/new", function (req, res, next) {
   const host = url.parse(req.body.url);
@@ -48,7 +60,7 @@ app.post("/api/shorturl/new", function (req, res, next) {
     if(addresses) {
       var newURL = new ShortURL({original_url: 'https://'+host.hostname});
       newURL.save(function(err, data){
-        console.log('data', err, data);
+        console.log('data',data);
         return res.json({original_url: req.body.url, short_url: data.short_url});
       })
     }
@@ -56,17 +68,7 @@ app.post("/api/shorturl/new", function (req, res, next) {
   });
 });
 
-//redirect to original url
-app.get('/api/shorturl/:short_url', (req, res) => {
-  var num= req.params.short_url;
-  ShortURL.findOne({"short_url": num}, (err, data) => {
-    //if(err) res.json({error: 'No URL found'});
-    res.redirect(data.original_url);
-  });
-});
-
 
 app.listen(port, function () {
   console.log('Node.js listening ...');
 });
-
