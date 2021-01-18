@@ -1,0 +1,210 @@
+$blue: rgba(58, 94, 171,0.8);
+$darkGrey: #343a40;
+$lightGrey: #6c757d;
+
+@mixin margenes($top, $bottom){
+    margin-top : $top;
+    margin-bottom: $bottom;
+}
+
+/***************************** BODY *******************************************/
+
+
+body{
+    background-color: $blue;        
+    color: white;
+}
+
+
+/***************************** JUMBOTRON *******************************************/
+.jumbotron{
+    margin-top: 50px;
+    color: rgb(205,205,255);
+    position: relative;
+    text-align: center;
+    color: rgb(2, 41, 1); 
+    @include margenes(0px, 40px);
+    height: 200px;
+
+}
+.jumbotron h1{
+    font-size: 8vw; 
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.bkgImage{
+    height: 200px;
+    width: 100%;
+    filter: opacity(70%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/***************************** BREADCRUMB *******************************************/
+
+.breadcrumb{
+    background-color: $darkGrey;
+}
+.breadcrumb span{
+    color: $lightGrey;
+}
+.breadcrumb a{
+    color: rgba(108, 117, 125, 0.612);
+}
+
+
+/***************************** CARDS *******************************************/
+
+.card-hotel{
+    flex: 1 250px;
+    margin-top: 20px;
+    background-color: #3f464d;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin: 0 5px 10px 5px;
+    text-align: justify;
+}
+
+.card-hotel h4{    
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:rgb(88, 125, 206);
+    font-size: 32px;
+
+}
+
+.card-hotel .card-header{
+    background-color: $darkGrey;    
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+}
+
+.card-img-top{
+    @include margenes(0px, 5px);
+}
+
+.card.tarjetas{
+    background-color: inherit;
+    padding: 0 0;
+}
+
+.card.tarjetas button{
+    color: black;        
+}
+.bkgrey{
+    background-color: $darkGrey;    
+    color: white;
+    border-radius: 5px;
+    padding: 2px 20px 2px 20px;
+    @include margenes(0px, 20px);
+}
+.bkgrey p{
+    color: $lightGrey;    
+}
+.info{
+    @include margenes(10px, 0px);
+}
+
+/***************************** BUTTONS *******************************************/
+
+.btn-reserva{
+    border-radius: 0;
+    width: 100%;
+}
+/*
+.btn-success:hover{    
+    color: rgba(255, 255, 255, 0.516);
+    background-color: rgb(48, 85, 164);    
+    border: none;
+}
+.btn-success:active{    
+    color: rgba(255, 255, 255, 0.516);
+    background-color: rgb(48, 85, 164);    
+    border: none;
+}
+*/
+
+/***************************** TABS / PILLS *******************************************/
+
+.tabs li{
+    border: 1px solid $darkGrey;
+    border-radius: 0%;
+}
+
+.tabs a{
+    color:#e1e1e1;    
+}
+.tarj{
+    background-color: inherit;
+    border:none;
+}
+.tarj li{
+    font-size: 22px;
+    font-weight: bold;
+}
+.tab-content{
+    border: 1px solid $darkGrey;
+}
+
+
+
+
+/***************************** MODALS + TOOTLTIPS *******************************************/
+.black{
+    color:black;
+    font-size: 16px;
+}
+.recipient{
+    color:black;
+}
+
+
+
+
+/***************************** carousel *******************************************/
+
+
+.d-block.w-100{
+    width: auto;
+    min-height: 325px;
+    max-height: 325px;
+    border-radius: 5%;
+}
+
+/***************************** FOOTER *******************************************/
+
+footer{
+    text-align: center;
+    padding: 10px 10px 0 10px;
+    background-color: #212529;    
+    @include margenes(20px, 0px);
+
+}
+address{
+    color: white;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    @include margenes(20px, 0px);
+    }
+    
+footer a:hover{
+    color: rgba(111, 128, 144, 0.5);
+    text-decoration: none;
+    }
+
+footer h3{
+    background-color: rgb(5, 17, 43);
+    @include margenes(0px, 20px);
+    padding: 12px 6px;
+}
+
+footer .icon{
+    margin-right: 12px;
+}
