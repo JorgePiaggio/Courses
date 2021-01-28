@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;  margin-top: 0px;
+
+}
+
+body { 
+  display: flex;
+  justify-content: center;
+  font-family:sans-serif;
+  margin: 0px; 
+  padding-bottom: 100px;
+  color: #222;
+  background: url('https://lifetimeacademy.force.com/s/GF_Barbell_01.jpg?v=1');
+   background-size: cover;
+ background-repeat: no-repeat;
+  
+}
+
+h1 {
+  font-weight: bold; font-size: 60px;
+  color: #f31128;  text-align: center;
+  padding: 15px;  background-color: black;  opacity: 80%;
+
+
+}
+
+p {
+  max-width: auto;
+}
+
+.b{
+  padding: 20px 0;
+  text-align: center;
+  background-color: black;
+  opacity: 80%;
+}
+
+form {  
+  opacity: 95%;
+  margin: -20px 25px 25px 0;
+  padding: 25px;
+  background-color: #a00028;
+  display: inline-block;
+  width: 100%;
+  max-width: 310px;
+  border-radius: 5px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+input[type=submit] {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #E4F1FE;
+  border: 1px solid grey;
+  box-shadow: 2px 2px #999;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: black;
+}
+
+code {
+  font-family: monospace;
+  font-size: 1.2em;
+  background-color: black;
+  padding: 2px;
+}
