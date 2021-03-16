@@ -1,0 +1,13 @@
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\bin\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.exe
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\bin\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.deps.json
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\bin\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.runtimeconfig.json
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\bin\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.runtimeconfig.dev.json
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\bin\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.dll
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\bin\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.pdb
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.csprojAssemblyReference.cache
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.AssemblyInfoInputs.cache
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.AssemblyInfo.cs
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.csproj.CoreCompileInputs.cache
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.dll
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.pdb
+C:\Users\chorche\source\repos\Accenture.Accademy.IntroC.Banco\obj\Debug\netcoreapp3.1\Accenture.Accademy.IntroC.Banco.genruntimeconfig.cache
