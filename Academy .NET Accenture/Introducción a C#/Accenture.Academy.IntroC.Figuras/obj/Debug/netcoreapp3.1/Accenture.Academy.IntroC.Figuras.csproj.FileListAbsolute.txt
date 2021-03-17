@@ -1,0 +1,13 @@
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\bin\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.exe
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\bin\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.deps.json
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\bin\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.runtimeconfig.json
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\bin\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.runtimeconfig.dev.json
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\bin\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.dll
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\bin\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.pdb
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.csprojAssemblyReference.cache
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.AssemblyInfoInputs.cache
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.AssemblyInfo.cs
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.csproj.CoreCompileInputs.cache
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.dll
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.pdb
+C:\Users\chorche\source\repos\Accenture.Academy.IntroC.Figuras\obj\Debug\netcoreapp3.1\Accenture.Academy.IntroC.Figuras.genruntimeconfig.cache
