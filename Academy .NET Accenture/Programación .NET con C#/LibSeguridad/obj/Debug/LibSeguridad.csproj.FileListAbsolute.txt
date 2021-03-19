@@ -1,0 +1,9 @@
+C:\Users\chorche\source\repos\LibSeguridad\bin\Debug\LibSeguridad.dll
+C:\Users\chorche\source\repos\LibSeguridad\bin\Debug\LibSeguridad.pdb
+C:\Users\chorche\source\repos\LibSeguridad\obj\Debug\LibSeguridad.csprojAssemblyReference.cache
+C:\Users\chorche\source\repos\LibSeguridad\obj\Debug\LibSeguridad.csproj.CoreCompileInputs.cache
+C:\Users\chorche\source\repos\LibSeguridad\obj\Debug\LibSeguridad.dll
+C:\Users\chorche\source\repos\LibSeguridad\obj\Debug\LibSeguridad.pdb
+C:\Users\chorche\source\repos\LibSeguridad\bin\Debug\BO.dll
+C:\Users\chorche\source\repos\LibSeguridad\bin\Debug\BO.pdb
+C:\Users\chorche\source\repos\LibSeguridad\obj\Debug\LibSeguridad.csproj.CopyComplete

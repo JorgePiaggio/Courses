@@ -1,0 +1,6 @@
+C:\Users\chorche\source\repos\BO\bin\Debug\BO.dll
+C:\Users\chorche\source\repos\BO\bin\Debug\BO.pdb
+C:\Users\chorche\source\repos\BO\obj\Debug\BO.csprojAssemblyReference.cache
+C:\Users\chorche\source\repos\BO\obj\Debug\BO.csproj.CoreCompileInputs.cache
+C:\Users\chorche\source\repos\BO\obj\Debug\BO.dll
+C:\Users\chorche\source\repos\BO\obj\Debug\BO.pdb
