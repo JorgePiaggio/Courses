@@ -9,8 +9,3 @@
     font-style: normal;
     font-display: block;
 }
-
-h4::after {
-    content: "\e900";
-    font-family: 'icomoon';
-}

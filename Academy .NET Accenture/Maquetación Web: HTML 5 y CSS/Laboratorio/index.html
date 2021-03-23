@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <title>Maquetación Web: HTML 5 y CSS</title>
 </head>
 <body>
@@ -25,10 +26,16 @@
             </form>
         </div>
     </div>
-  
+    
+    <a href="https://wa.me/545552222"><div id="chat"></div></a>
 
+    <div id="content">
     <nav>
-        <img src="images/logo.png" alt="logo compañía"><a href="#" class="activo">Inicio</a><a href="#" onclick="abrir()">Contacto</a>
+        <img src="images/logo.png" alt="logo compañía">
+        <a href="#" class="activo">Inicio</a>
+        <a href="#" onclick="abrir()">Contacto</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#promos">Promociones</a>
     </nav>
     
 
@@ -40,9 +47,10 @@
 
 
     <main>
+
         <section class="nosotros division"> 
             <div>
-                <h2>Amor al deporte</h2> 
+                <h2 class="grey">Amor al deporte</h2> 
                 <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, esse tempore. Magnam eos voluptas eaque magni atque veniam, nesciunt aspernatur laudantium doloribus ipsa dicta delectus officia, expedita fugiat perferendis ab! </p>
 
                 <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, esse tempore. Magnam eos voluptas eaque magni atque veniam, nesciunt aspernatur laudantium doloribus ipsa dicta delectus officia, expedita fugiat perferendis ab! </p>
@@ -55,12 +63,8 @@
         </section>
 
         <section class="division">
-            <div>
-                <img src="images/ejercicio.jpg" alt="hombre haciendo ejercicio">
-            </div>
-
-            <div>
-                <h3>Cronograma</h3>
+            <div class="grey">
+                <h3 id="cronograma">Cronograma</h3>
                 <article> 
                     <h4> Natación</h4>
                     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dignissimos vel earum dolor reiciendis est reprehenderit delectus, blanditiis dolore ad labore doloremque quibusdam ut ex molestias? Repellendus error nihil earum? </p>
@@ -79,13 +83,48 @@
                     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi dignissimos vel earum dolor reiciendis est reprehenderit delectus, blanditiis dolore ad labore doloremque quibusdam ut ex molestias? Repellendus error nihil earum? </p>
                 </article>
             </div>
+
+            <div>
+                <img class="ejercicio" src="images/ejercicio.jpg" alt="hombre haciendo ejercicio">
+            </div>
+        </section>
+
+        <section class="division">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3" id="promos">Promociones</tr>
+                    </tr>
+                    <tr>
+                        <th>Lorem ipsum dolor sit amet.</th>
+                        <th>Quos eligendi repudiandae consequuntur eaque.</th>
+                        <th>Architecto distinctio molestiae inventore eum!</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aspernatur.</td>
+                        <td>Aut iste reprehenderit unde! Ea incidunt voluptatibus amet placeat vel!</td>
+                        <td>Rem possimus quae placeat? Veniam ipsum neque praesentium veritatis excepturi.</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, eaque.</td>
+                        <td>Consequatur voluptas vero fugiat cumque, dicta modi aut nulla nesciunt!</td>
+                        <td>Ipsum veniam, aspernatur non vel tempora quam eaque in expedita!</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, inventore.</td>
+                        <td>Eius dolorem dicta rem odio eveniet incidunt dignissimos tempore voluptate.</td>
+                        <td>Debitis non nostrum similique numquam, quasi sint animi impedit facilis?</td>
+                    </tr>
+            </table>
         </section>
     </main>
 
-    <div id="chat"></div>
 
     <footer>  
-        <p> @instagram </p> 
+        <a href="https://www.instagram.com/?hl=es"><img src="images/instagram.svg" alt="instagram logo"></a>
+        <a href="https://twitter.com/?lang=es"><img src="images/twitter.svg" alt="twitter logo"></a>
+        <a href="https://wa.me/545552222"><img src="images/whatsapp.svg" alt="whatsapp logo"></a>
         <ul>
             <li>dolore ad labore doloremque</li>
             <li>dolore ad labore doloremque</li>
@@ -104,7 +143,7 @@
             <li>dolore ad labore doloremque</li>
         </ul>
     </footer>
-
+    </div>
 
     <script src="js/codigo.js"></script>
 
