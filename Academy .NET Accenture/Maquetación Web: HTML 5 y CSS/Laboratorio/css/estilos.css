@@ -242,9 +242,6 @@ thead tr:last-child{
     color: var(--light-orange);
 }
 
-
-
-
 nav {
     width: 100%;
     height: 40px;
@@ -342,7 +339,30 @@ footer img{
         width: 20px;
         height: 20px;
         margin: 0 6px;
+    } 
+    nav{
+        height: auto;
+        float: none;
+        display: flex;
+        flex-direction: column;
     }
+
+    nav > * {
+        text-align: center;
+    }
+
+    nav img {
+        margin: 1em auto;
+    }
+
+    header {
+        width: 100%;
+        height: 300px;
+        text-align: center;
+        background-size: stretch;
+        margin-bottom: 0;
+    }
+
 }
 
 @media (max-width: 400px){
