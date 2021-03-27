@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Laboratorio Adicional 1</title>
+</head>
+<body>
+
+    <div class="form-div" id="formulario">
+        <form action="" method="POST">
+                <span>
+                    <h2>La Especialista</h2>
+                    <img src="img/empanada.png" alt="comida, empandas">
+                </span>
+                <label>Nombre</label><input type="text" placeholder="Fulano de Tal" required>
+                <label>Email</label><input type="email" placeholder="example@mail.com" required>
+                <label>Mensaje</label><textarea placeholder="Escriba aquí su mensaje..." cols="40" rows="10"></textarea>
+                <button type="submit">Enviar</button> 
+                <button onclick="cerrar()" formnovalidate>Cerrar Formulario</button>
+        </form>
+    </div>
+
+
+    <div id="main-container">
+        <div class="contenedor">
+
+            <header>
+                <h1>La Especialista</h1><h5><em>desde hace más de medio siglo</em></h5>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="#pastas">PASTAS</a> - </li>
+                    <li><a href="#pizzas">PIZZAS</a> - </li>
+                    <li><a href="#empanadas">EMPANADAS</a> - </li>
+                    <li><a href="#ensaladas">ENSALADAS</a> - </li>
+                    <li><a href="#postres">POSTRES</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+
+        <main>
+
+            <!-- section*5>h2+h5+p+h3+ul>li*6^a -->
+            <section id="pastas">
+                <h2><u>Pastas</u>,</h2>
+                <h5>sabores que conquistan</h5>
+                <p>Nuestras recetas únicas son una delicia para el paladar de todas las familias.</p>
+                <h3>Nuestras variedades</h3>
+                <ul>
+                    <li><strong>Cappellettis</strong><em> de 4 quesos, caprese, jamón y queso</em></li>
+                    <li><strong>Ñoquis</strong><em> de papa, ricota, espinaca, calabaza</em></li>
+                    <li><strong>Ñoquis rellenos (la especialidad de la casa)</strong><em> de espinaca, calabaza, queso o caprese</em></li>
+                    <li>Ravioles</li>
+                    <li>Raviolones</li>
+                    <li>Sorrentinos</li>
+                </ul>
+                <a href="#">Volver al inicio</a>
+            </section>
+
+            <section id="pizzas">
+                <h2><u>Pizzas</u>,</h2>
+                <h5>tradición sin fronteras</h5>
+                <p>Amasadas por nuestros queridos cocineros, ofrecen lo mejor de nosotros en sus clásicos sabores.</p>
+                <h3>Sabores</h3>
+                <p>Muzzarella :: Muzzarella con jamón :: Fugazza :: Verdura y salsa blanca :: Roquefort :: Provolone :: Cuatro quesos :: Cancha :: Calabresa :: Palmitos :: Fugazzeta napolitana</p>
+                <a href="#">Volver al inicio</a>
+            </section>
+
+            <section id="empanadas">
+                <h2><u>Empanadas</u>,</h2>
+                <h5>un mundo de deliciosos sabores</h5>
+                <p>Conocidas por sus generosos y deliciosos rellenos, se ofrecen en diversos sabores.</p>
+                <h3>Sabores clásicos</h3>
+                <p>Carne suave :: Carne picante :: Pollo :: Roquefort con apio y nuez :: Caprese :: Queso y cebolla :: Verdura :: Verdura y salsa blanca :: Humita</p>
+                <h3>Sabores únicos</h3>
+                <p>Calabaza asada y queso :: Caprese con aceitunas :: Humita y queso :: Queso, verdeo y nuez</p>
+                <a href="#">Volver al inicio</a>
+            </section>
+
+            <section id="ensaladas">
+                <h2><u>Ensaladas</u>,</h2>
+                <h5>exquisitas y frescas</h5>
+                <p><em>Próximamente...</em></p>
+                <p>Estamos preparando las mejores recetas para vos.</p>
+                <a href="#">Volver al inicio</a>
+            </section>
+
+            <section id="postres">
+                <h2><u>Postres</u>,</h2>
+                <h5>el final perfecto para tu comida</h5>
+                <p>Nuestras abundantes porciones son para compartir entre dos. <em>¡Probalos todos!</em></p>
+                <p>Flan con caramelo :: Budín de pan :: Frutillas a la crema :: Volcán de chocolate :: Arroz con leche :: Tiramisú (receta italiana) :: Brownie con helado :: Pastel de 3 leches :: Queso y batata :: Bombón escocés</p>
+                <a href="#">Volver al inicio</a>
+            </section>
+
+        </main>
+
+        <footer>
+            <p><em>Fundada en 1968, <strong>La Especialista</strong>  produce sus productos de forma casera.</em></p>
+            <p>Ante cualquier duda comunicate al <a href="tel:541144442222">(+54) 11 4444-2222</a>, escribinos a <a href="mailto:info@laespecialistaweb.com">info@laespecialistaweb.com</a> o envianos un mensaje desde <a href="#" onclick="abrir()">nuestra página de contacto</a>.</p>
+        </footer>
+    
+    </div>
+
+    <script src="js/codigo.js"></script>
+
+</body>
+</html>

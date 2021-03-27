@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+*
+* los colores en firefox se ven de un tono, en chrome de otro :/
+*   ..se usó un color picker..
+*
+*/
+
+:root{
+    --white: #fff;
+    --blue : #2A343A;
+    --light-blue : #758E9C;
+    --turquoise : #00785E;
+    --yellow: #DAA200;
+    --green: #4D9A40;
+    --red: #BF3D00;
+    --mid-blue: #506A79;
+    --border-blue: #475D75;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}
+
+h1{
+    margin: 1em 1em;
+    font-size: 2.5em;
+}
+
+table,
+thead,
+th,
+td,
+tr {
+    border: 1px solid var(--border-blue);
+    color: var(--white);
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    align-content: center;
+    margin: 2em 2em;
+    border: 3px solid var(--border-blue);    
+    font-weight: bold;
+}
+
+thead{
+    background-color: var(--blue);
+}
+
+th{
+    padding: 1.2em 2.1em;
+}
+
+th:hover{
+    cursor:default;
+}
+
+td{    
+    padding: 1.1em 1.5em;
+    background-color: var(--light-blue);
+    font-weight: lighter;
+}
+
+td:hover{
+    filter: saturate(4);
+    cursor:crosshair;
+}
+
+tr:last-of-type td:last-of-type:hover{    
+    filter: saturate(1);
+    cursor:default;
+}
+
+tbody > tr:nth-child(1) > td:last-child,
+tbody > tr:nth-child(4) > td:last-child {
+    background-color: var(--turquoise);
+}
+
+tbody > tr:nth-child(2) > td:last-child,
+tbody > tr:nth-child(5) > td:last-child {
+    background-color: var(--yellow);
+    font-weight: bold;
+}
+
+tbody > tr:nth-child(3) > td:last-child,
+tbody > tr:nth-child(6) > td:last-child {
+    background-color: var(--green);
+    font-weight: bold;
+}
+
+tbody > tr:nth-child(8) > td:last-child {
+    background-color: var(--red);
+    font-weight: bold;
+}
+
+tbody > tr:last-child > td {
+    background-color: var(--mid-blue);
+    font-size: .9em;
+    font-style: italic;
+    font-weight: 400;
+    text-align: right;
+    padding: .5em 2em;
+}
