@@ -32,6 +32,10 @@ h1{
     font-size: 2.5em;
 }
 
+section{
+    overflow-x:auto;
+}
+
 table,
 thead,
 th,
