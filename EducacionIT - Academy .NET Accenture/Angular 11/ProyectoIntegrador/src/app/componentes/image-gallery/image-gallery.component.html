@@ -1,0 +1,24 @@
+
+
+
+<div class="gallery">
+
+    <div class="botonera">
+        <button type="button" class="btn btn-dark" (click)="category='Road Bike'">Road</button>
+        <button type="button" class="btn btn-dark" (click)="category='Mountain Bike'">Mountain</button>
+        <button type="button" class="btn btn-dark" (click)="category='Hybrid/Commuter Bike'">Hybrid</button>
+        <button type="button" class="btn btn-dark" (click)="category='Cyclocross Bike'">Cyclocross</button>
+        <button type="button" class="btn btn-dark" (click)="category='Folding Bike'">Folding</button>
+    </div>
+    <div class="botonera">
+        <button type="button" class="btn btn-dark all" (click)="category=''">All</button>
+    </div>
+    <div class="grid">
+        <span class="imgCard" *ngFor="let b of (bikes | FilterPipe:category)"> 
+            <a [routerLink] = "['/image-details', b.id]">
+            <img class="gallery-img" src={{b.url}}>
+            <p class="b-model">{{b.modelo}}</p>
+            </a>
+        </span>
+    </div>
+</div>

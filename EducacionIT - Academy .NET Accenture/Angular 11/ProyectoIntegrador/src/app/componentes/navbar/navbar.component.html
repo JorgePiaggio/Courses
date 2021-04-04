@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" aria-current="page" [routerLink]="'/home'"><fa-icon class="bike-icon" [icon]="faBiking"></fa-icon>
+      GB</a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngbCollapse]="isCollapsed">
+      <div class="navbar-nav">
+        <a class="nav-link" [routerLink]="'/load-warranty'">Load Bike Warranty</a>
+        <a class="nav-link" [routerLink]="'/admin'">View Warranty List</a>
+        <a class="nav-link" [routerLink]="'/image-gallery'">Gallery</a>
+        <a class="nav-link" [routerLink]="'/about'" tabindex="-1">About</a>
+      </div>
+    </div>
+  </div>
+</nav>

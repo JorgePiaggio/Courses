@@ -1,0 +1,24 @@
+<!-- {{bikes | json}} -->
+<div class="container">
+    <div class="page-title">
+        <h2>Warranty List</h2>
+    </div>
+    <table class="table table-dark table-bordered table-inverse">
+        <thead>
+            <tr>
+                <th>Owner name</th>
+                <th>Email</th>
+                <th>Model</th>
+                <th class="text-right">Purchase Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of bikes">
+                <td><a [routerLink]="['/view', b.id]">{{b.name}}</a></td>
+                <td>{{b.email}}</td>
+                <td>{{b.model}}</td>
+                <td class="text-right"><fa-icon class="bike-icon" [icon]="faDollarSign"></fa-icon>{{b.purchasePrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
