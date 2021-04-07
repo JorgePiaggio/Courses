@@ -1,0 +1,24 @@
+﻿@model MVCTransportes.Models.Chofer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalle Chofer</title>
+</head>
+<body>
+    <div> 
+        <h2>Chofer: @Model.Apellido, @Model.Nombre</h2>
+        <p>Número de Registro: @Html.DisplayFor(model => model.NroRegistro) </p>
+        <p>@Html.DisplayNameFor(model => model.DNI): @Html.DisplayFor(model => model.DNI) </p>
+        <p>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email) </p>
+        <p>@Html.DisplayNameFor(model => model.Ciudad): @Html.DisplayFor(model => model.Ciudad) </p>
+        <p>@Html.ActionLink("Back To List", "Index") </p>
+    </div>
+</body>
+</html>

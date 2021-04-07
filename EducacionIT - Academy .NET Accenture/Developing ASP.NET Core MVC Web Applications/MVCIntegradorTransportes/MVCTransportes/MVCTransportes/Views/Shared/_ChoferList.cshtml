@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MVCTransportes.Models.Chofer>
+
+<table>
+    <tr>
+        <theader>
+            <th>@Html.DisplayNameFor(model => model.ChoferID)</th>
+            <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+        </theader>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelitem => item.ChoferID) </td>
+                <td>@Html.DisplayFor(modelitem => item.Apellido) </td>
+                <td>@Html.DisplayFor(modelitem => item.Nombre) </td>
+                <td>
+                    @Html.ActionLink("Editar", "Update", new { id = item.ChoferID })
+                    @Html.ActionLink("Detalle", "Display", new { id = item.ChoferID })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ChoferID })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

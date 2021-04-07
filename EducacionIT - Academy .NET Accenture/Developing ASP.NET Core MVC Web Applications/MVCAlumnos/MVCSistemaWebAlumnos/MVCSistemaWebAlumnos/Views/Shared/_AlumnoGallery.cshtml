@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVCSistemaWebAlumnos.Models.Alumno>
+
+<table>
+    <tr>
+        <theader>
+            <th>@Html.DisplayNameFor(model => model.AlumnoID)</th>
+            <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.DNI)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+        </theader>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelitem => item.AlumnoID) </td>
+            <td>@Html.DisplayFor(modelitem => item.Apellido) </td>
+            <td>@Html.DisplayFor(modelitem => item.Nombre) </td>
+            <td>@Html.DisplayFor(modelitem => item.DNI) </td>
+            <td>@Html.DisplayFor(modelitem => item.Email) </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.AlumnoID })
+                @Html.ActionLink("Detalle", "Display", new { id = item.AlumnoID })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.AlumnoID })
+            </td>
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+

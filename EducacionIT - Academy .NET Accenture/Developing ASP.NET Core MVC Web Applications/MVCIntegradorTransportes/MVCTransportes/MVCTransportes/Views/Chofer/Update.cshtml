@@ -1,0 +1,67 @@
+﻿@model MVCTransportes.Models.Chofer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar Chofer</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Chofer", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.ChoferID)
+            <fieldset>
+                <div>
+                    @Html.LabelFor(model => model.Nombre)
+                    @Html.EditorFor(model => model.Nombre)
+                    @Html.ValidationMessageFor(model => model.Nombre)
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.Apellido)
+                    @Html.EditorFor(model => model.Apellido)
+                    @Html.ValidationMessageFor(model => model.Apellido)
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.DNI)
+                    @Html.EditorFor(model => model.DNI)
+                    @Html.ValidationMessageFor(model => model.DNI)
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.Email)
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.NroRegistro)
+                    @Html.EditorFor(model => model.NroRegistro)
+                    @Html.ValidationMessageFor(model => model.NroRegistro)
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.Ciudad)
+                    @Html.EditorFor(model => model.Ciudad)
+                    @Html.ValidationMessageFor(model => model.Ciudad)
+                </div>
+
+                <p><input type="submit" name="update" value="Update" /></p>
+            </fieldset>
+        }
+
+
+        <div>
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    </div>
+</body>
+</html>

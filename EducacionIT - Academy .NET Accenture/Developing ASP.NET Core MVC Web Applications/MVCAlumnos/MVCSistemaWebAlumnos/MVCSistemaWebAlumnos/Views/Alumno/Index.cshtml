@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MVCSistemaWebAlumnos.Models.Alumno>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lista de Alumnos</title>
+</head>
+<body>
+    <div> 
+        <h2>Alumnos: </h2>
+
+        <p>
+            @Html.ActionLink("Agregar alumno", "Create", "Alumno")
+            @Html.Action("_AlumnoGallery", "Alumno") 
+        </p>
+    </div>
+</body>
+</html>
