@@ -1,0 +1,36 @@
+﻿@model MVCSistemaWebAlumnos.Models.Alumno
+
+@using (Html.BeginForm("Create", "Alumno", FormMethod.Post))
+{
+    <fieldset>
+        <div>
+            @Html.LabelFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Apellido)
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.DNI)
+            @Html.EditorFor(model => model.DNI)
+            @Html.ValidationMessageFor(model => model.DNI)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <p><input type="submit" name="name" value="Create" /></p>
+    </fieldset>
+}
+
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>

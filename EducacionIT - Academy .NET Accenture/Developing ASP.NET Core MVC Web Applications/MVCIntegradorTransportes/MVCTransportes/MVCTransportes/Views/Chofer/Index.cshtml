@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MVCTransportes.Models.Chofer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lista de Choferes</title>
+</head>
+<body>
+    <div> 
+        <h2>Lista de Choferes</h2>
+        <p>
+            @Html.ActionLink("Agregar Chofer", "Create", "Chofer")
+            @Html.Action("_ChoferList", "Chofer")
+        </p>
+    </div>
+</body>
+</html>

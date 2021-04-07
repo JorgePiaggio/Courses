@@ -1,0 +1,51 @@
+﻿@model MVCTransportes.Models.Chofer
+
+
+@using (Html.BeginForm("Create", "Chofer", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div>
+            @Html.LabelFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Apellido)
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.DNI)
+            @Html.EditorFor(model => model.DNI)
+            @Html.ValidationMessageFor(model => model.DNI)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.NroRegistro)
+            @Html.EditorFor(model => model.NroRegistro)
+            @Html.ValidationMessageFor(model => model.NroRegistro)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Ciudad)
+            @Html.EditorFor(model => model.Ciudad)
+            @Html.ValidationMessageFor(model => model.Ciudad)
+        </div>
+
+        <p><input type="submit" name="name" value="Create" /></p>
+    </fieldset>
+}
+
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
