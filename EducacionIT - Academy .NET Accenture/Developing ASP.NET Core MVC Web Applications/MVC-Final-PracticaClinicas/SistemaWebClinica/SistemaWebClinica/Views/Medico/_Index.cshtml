@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SistemaWebClinica.Models.Medico>
+
+
+@{
+    ViewBag.Title = "Lista Medicos";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Matricula)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Especialidad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ciudad)
+    </td>
+    <td>
+        @Html.ActionLink("Detalles", "Details", new { id = item.MedicoID }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.MedicoID }) |
+        @Html.ActionLink("Traer Especialidad", "GetMedicosEspecialidad", new { especialidad = item.Especialidad }) | 
+        @Html.ActionLink("Traer Especialidad y Ciudad", "GetMedicosEspecialidadCiudad", new { especialidad = item.Especialidad, ciudad = item.Ciudad })
+    </td>
+</tr>
+    }
+
+</table>
+
+
+@section Sidebar
+{
+    <h4>Lorem</h4>
+    <p>Nulla metus orci, pellentesque ut orci a, pretium accumsan mauris. Pellentesque sit amet dolor facilisis, ultrices ipsum in, faucibus dui. Aliquam sem neque, efficitur eu scelerisque vitae, mollis in elit.</p>
+    <h4>Ipsum</h4>
+    <p>Morbi ac dolor convallis, consectetur justo id, eleifend nibh. Aenean quis eros sit amet velit tempor semper. Donec volutpat egestas ante in commodo. </p>
+}
