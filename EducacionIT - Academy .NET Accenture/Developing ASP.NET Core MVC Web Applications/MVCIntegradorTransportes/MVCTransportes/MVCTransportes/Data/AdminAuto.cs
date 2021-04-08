@@ -15,7 +15,7 @@ namespace MVCTransportes.Data
             return context.Autos.ToList();
         }
 
-        public static Auto GetChofer(int id)
+        public static Auto GetAuto(int id)
         {
             Auto auto = (from a in context.Autos where a.AutoID == id select a).Single();
             return auto;

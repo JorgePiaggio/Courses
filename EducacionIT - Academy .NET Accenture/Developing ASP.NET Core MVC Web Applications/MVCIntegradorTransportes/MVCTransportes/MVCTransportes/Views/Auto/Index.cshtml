@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MVCTransportes.Models.Auto>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lista de Autos</title>
+</head>
+<body>
+    <h2>Lista de Autos</h2>
+
+    <p>
+        @Html.ActionLink("Agregar Auto", "Create", "Auto")
+        @Html.Action("_AutoList", "Auto")
+    </p>
+
+</body>
+</html>

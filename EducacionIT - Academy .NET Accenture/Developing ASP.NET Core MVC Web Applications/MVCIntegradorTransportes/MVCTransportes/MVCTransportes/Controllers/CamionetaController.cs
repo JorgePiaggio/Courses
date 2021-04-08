@@ -8,79 +8,72 @@ using System.Web.Mvc;
 
 namespace MVCTransportes.Controllers
 {
-    public class ChoferController : Controller
+    public class CamionetaController : Controller
     {
         // GET: Chofer
         public ActionResult Index()
         {
-            List<Chofer> choferes = AdminChofer.GetChoferes();
-            return View(choferes);
+            List<Camioneta> camionetas = AdminCamioneta.GetCamionetas();
+            return View(camionetas);
         }
 
         [ChildActionOnly]
         public ActionResult _ChoferList(int number = 0)
         {
-            List<Chofer> choferes = AdminChofer.GetChoferes();
-            return PartialView("_ChoferList", choferes);
-        }
-
-        [ChildActionOnly]
-        public ActionResult _ChoferDropdown()
-        {
-            List<Chofer> choferes = AdminChofer.GetChoferes();
-            return PartialView("_ChoferList", choferes);
+            List<Camioneta> camionetas = AdminCamioneta.GetCamionetas();
+            return PartialView("_CamionetaList", camionetas);
         }
 
         public ActionResult Display(int id)
         {
-            Chofer chofer = AdminChofer.GetChofer(id);
-            if(chofer != null)
-                return View("Display", chofer);
+            Camioneta camioneta = AdminCamioneta.GetCamioneta(id);
+            if (camioneta != null)
+                return View("Display", camioneta);
             return HttpNotFound();
         }
 
         public ActionResult Create()
         {
-            return View("_ChoferCreate");
+            return View("_CamionetaCreate");
         }
 
         [ChildActionOnly]
-        public ActionResult _ChoferCreate()
+        public ActionResult _CamionetaCreate()
         {
-            Chofer nuevo = new Chofer();
-            return PartialView("_ChoferList", nuevo);
+            Camioneta camioneta = new Camioneta();
+            return PartialView("_CamionetaList", camioneta);
         }
 
         [HttpPost]
-        public ActionResult Create(Chofer chofer)
+        public ActionResult Create(Camioneta camioneta)
         {
             if (!ModelState.IsValid)
             {
-                return View("Create", chofer);
+                return View("Create", camioneta);
             }
             else
             {
-                AdminChofer.Create(chofer);
+                AdminCamioneta.Create(camioneta);
                 return RedirectToAction("Index");
             }
         }
 
         public ActionResult Update(int id)
         {
-            Chofer c = AdminChofer.GetChofer(id);
-            return View("Update",c);
+            Camioneta c = AdminCamioneta.GetCamioneta(id);
+            return View("Update", c);
         }
 
         [HttpPost]
-        public ActionResult Update(Chofer chofer)
+        public ActionResult Update(Camioneta camioneta)
         {
             if (!ModelState.IsValid)
             {
-                return View("Update", chofer);
+                return View("Update", camioneta);
             }
             else
             {
-                AdminChofer.Update(chofer);
+                AdminCamioneta.Update(camioneta);
                 return RedirectToAction("Index");
             }
         }
@@ -93,10 +86,8 @@ namespace MVCTransportes.Controllers
         [HttpPost]
         public ActionResult DeleteConfirmed(int id)
         {
-                AdminChofer.Delete(id);
-                return RedirectToAction("Index");
+            AdminCamioneta.Delete(id);
+            return RedirectToAction("Index");
         }
-
-
     }
 }

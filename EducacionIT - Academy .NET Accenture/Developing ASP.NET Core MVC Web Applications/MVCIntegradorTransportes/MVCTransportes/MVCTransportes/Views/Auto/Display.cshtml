@@ -1,0 +1,57 @@
+﻿@model MVCTransportes.Models.Auto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalle Auto</title>
+</head>
+<body>
+    <div>
+        <h2>Detalle Auto</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Marca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Marca)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Modelo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Matricula)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Caracteristicas)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Caracteristicas)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

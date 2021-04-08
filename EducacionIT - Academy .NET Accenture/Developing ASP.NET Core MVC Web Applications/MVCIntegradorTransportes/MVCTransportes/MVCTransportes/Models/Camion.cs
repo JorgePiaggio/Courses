@@ -8,6 +8,7 @@ namespace MVCTransportes.Models
 {
     public class Camion : Vehiculo
     {
+        public Camion() { }
         public Camion(string marca, string modelo, string matricula, string caracteristicas, Chofer chofer) : base(marca, modelo, matricula, caracteristicas, chofer) { }
 
         [Required(ErrorMessage = "Campo requerido")]

@@ -1,0 +1,53 @@
+﻿@model MVCTransportes.Models.Auto
+
+@using (Html.BeginForm("Create", "Auto", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div>
+            @Html.LabelFor(model => model.Marca)
+            @Html.EditorFor(model => model.Marca)
+            @Html.ValidationMessageFor(model => model.Marca)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Modelo)
+            @Html.EditorFor(model => model.Modelo)
+            @Html.ValidationMessageFor(model => model.Modelo)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Matricula)
+            @Html.EditorFor(model => model.Matricula)
+            @Html.ValidationMessageFor(model => model.Matricula)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.Caracteristicas)
+            @Html.EditorFor(model => model.Caracteristicas)
+            @Html.ValidationMessageFor(model => model.Caracteristicas)
+        </div>
+
+        <div>
+            <td>
+                @Html.LabelFor(model => model.Chofer.ChoferID)
+                @Html.EditorFor(model => model.Chofer.ChoferID)
+
+                @*
+         @Html.DropDownList("Chofer", new List<SelectListItem>
+        {
+        @Html.Partial("_ChoferDropdown")
+        })
+                *@
+
+            </td>
+        </div>
+
+        <p><input type="submit" name="name" value="Create" /></p>
+    </fieldset>
+}
+
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>

@@ -126,6 +126,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AutoController.cs" />
+    <Compile Include="Controllers\CamionController.cs" />
+    <Compile Include="Controllers\CamionetaController.cs" />
     <Compile Include="Controllers\ChoferController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\AdminAuto.cs" />
@@ -133,6 +136,7 @@
     <Compile Include="Data\AdminCamioneta.cs" />
     <Compile Include="Data\AdminChofer.cs" />
     <Compile Include="Data\TransportesDBContext.cs" />
+    <Compile Include="Filter\FilterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,10 +195,17 @@
     <Content Include="Views\Shared\_ChoferCreate.cshtml" />
     <Content Include="Views\Chofer\Display.cshtml" />
     <Content Include="Views\Chofer\Update.cshtml" />
+    <Content Include="Views\Auto\Index.cshtml" />
+    <Content Include="Views\Shared\_AutoList.cshtml" />
+    <Content Include="Views\Auto\Display.cshtml" />
+    <Content Include="Views\Auto\Create.cshtml" />
+    <Content Include="Views\Shared\_AutoCreate.cshtml" />
+    <Content Include="Views\Shared\_ChoferDropdown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Camioneta\" />
+    <Folder Include="Views\Camion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

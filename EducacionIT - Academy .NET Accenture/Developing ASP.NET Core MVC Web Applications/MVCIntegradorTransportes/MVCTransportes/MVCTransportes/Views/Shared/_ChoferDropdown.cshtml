@@ -1,0 +1,7 @@
+﻿@model IEnumerable<MVCTransportes.Models.Chofer>
+
+
+    @foreach (var item in Model)
+    {
+        new SelectListItem { Text = (item.Apellido), Value = (item.ChoferID.ToString()) };
+     }

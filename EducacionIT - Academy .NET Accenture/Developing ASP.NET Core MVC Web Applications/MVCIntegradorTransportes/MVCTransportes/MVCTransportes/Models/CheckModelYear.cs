@@ -14,7 +14,7 @@ namespace MVCTransportes.Models
         }
         public override bool IsValid(object value)
         {
-            int year = (int)value;
+            int year = Convert.ToInt32(value);
             if (year > 2015)
                 return true;
             return false;
