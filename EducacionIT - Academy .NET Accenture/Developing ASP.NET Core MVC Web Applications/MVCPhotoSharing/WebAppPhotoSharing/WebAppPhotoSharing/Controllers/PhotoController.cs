@@ -8,10 +8,14 @@ using System.Collections.Generic;
 
 namespace WebAppPhotoSharing.Controllers
 {
+    [HandleError(View = "Error")]
     [ValueReporter]
     public class PhotoController : Controller
     {
-        private PhotoSharingDBContext context = new PhotoSharingDBContext();
+        private IPhotoSharingContext context;
+        public PhotoController() { context = new PhotoSharingDBContext(); }
+        public PhotoController(IPhotoSharingContext Context) { context = Context; }
+
 
 
         #region endpoints
@@ -32,16 +36,16 @@ namespace WebAppPhotoSharing.Controllers
             }
             else
             {
-                photos = ( from p in context.Photos orderby p.CreationDate descending select p).Take(number).ToList();
+                photos = (from p in context.Photos orderby p.CreationDate descending select p).Take(number).ToList();
             }
 
-            return PartialView("_PhotoGallery",photos);
+            return PartialView("_PhotoGallery", photos);
         }
 
 
         public ActionResult Display(int id)
         {
-            Photo photo = context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
 
             if (photo == null)
             {
@@ -76,7 +80,7 @@ namespace WebAppPhotoSharing.Controllers
                     photo.ImageMimeType = image.ContentType;
                     photo.PhotoFile = new byte[image.ContentLength];
                     image.InputStream.Read(photo.PhotoFile, 0, image.ContentLength);
-                    context.Photos.Add(photo);
+                    context.Add<Photo>(photo);
                     context.SaveChanges();
                 }
                 return RedirectToAction("Index");
@@ -88,9 +92,9 @@ namespace WebAppPhotoSharing.Controllers
         #region delete
         public ActionResult Delete(int id)
         {
-            Photo photo = context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
 
-            if(photo == null)
+            if (photo == null)
             {
                 return HttpNotFound();
             }
@@ -102,8 +106,8 @@ namespace WebAppPhotoSharing.Controllers
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Photo photo = context.Photos.Find(id);
-            context.Photos.Remove(photo);
+            Photo photo = context.FindPhotoById(id);
+            context.Delete<Photo>(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -112,9 +116,9 @@ namespace WebAppPhotoSharing.Controllers
         #region getImage
         public FileContentResult GetImage(int id)
         {
-            Photo photo = context.Photos.Find(id);
+            Photo photo = context.FindPhotoById(id);
 
-            if(photo != null)
+            if (photo != null)
             {
                 return File(photo.PhotoFile, photo.ImageMimeType);
             }
@@ -127,6 +131,11 @@ namespace WebAppPhotoSharing.Controllers
 
 
         #endregion
+
+        public ActionResult SlideShow(){
+            throw new NotImplementedException("The SlideShow action is not yet ready");
+         }
+
 
 
     }
