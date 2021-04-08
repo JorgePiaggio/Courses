@@ -94,12 +94,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\BackgroundGradient.jpg" />
+    <Content Include="Content\PhotoSharingStyles.css" />
     <Content Include="Error.html" />
     <Content Include="Global.asax" />
+    <Content Include="Images\blackberries.JPG" />
     <Content Include="Images\flower.JPG" />
     <Content Include="Images\orchard.JPG" />
     <Content Include="Images\path.JPG" />
+    <Content Include="Images\pontoon.JPG" />
+    <Content Include="Images\track.JPG" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -126,13 +130,13 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Photo\Index.cshtml" />
     <Content Include="Views\Photo\Display.cshtml" />
     <Content Include="Views\Photo\Create.cshtml" />
     <Content Include="Views\Shared\_PhotoGallery.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

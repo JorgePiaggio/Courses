@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="~/content/PhotoSharingStyles.css" />
+</head>
+<body>
+    <div>
+        <h1 class="site-page-title">
+            Adventure Works Photo Sharing
+        </h1>
+
+        <div class="clear-floats" />
+        <div id="topmenu">
+            @Html.ActionLink("Index", "Index", "Home")
+            @Html.ActionLink("Add a Photo", "Create", "Photo")
+        </div>
+            <div id="breadcrumb">
+               Share your photos with the world!
+            </div>
+
+            <div>
+                @RenderBody()
+            </div>
+
+    </div>
+</body>
+</html>

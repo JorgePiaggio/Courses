@@ -54,6 +54,18 @@ namespace WebAppPhotoSharing.Controllers
             return View("Display", photo);
         }
 
+        /*
+        public ActionResult DisplayByTitle(string title)
+        {
+            Photo photo = context.FindPhotoByTitle(title);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Display", photo);
+        }
+        */
+
         #region create
 
         public ActionResult Create()
@@ -129,7 +141,7 @@ namespace WebAppPhotoSharing.Controllers
         }
         #endregion
 
-
+        
         #endregion
 
         public ActionResult SlideShow(){
