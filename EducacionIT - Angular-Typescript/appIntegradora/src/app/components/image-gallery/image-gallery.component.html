@@ -1,0 +1,42 @@
+<div>
+  <div class="row">
+    <div class="col-sm-12 btn">
+      <h4>Image Gallery</h4>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+    <div class="col-sm-1">
+
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-success" (click)="filterBy='all'">Todos los modelos</button>
+    </div>
+
+    <div class="col-sm-2">
+      <button class="btn btn-success" (click)="filterBy='adultosrc'">Para Adultos</button>
+    </div>
+
+    <div class="col-sm-2">
+      <button class="btn btn-success" (click)="filterBy='bkeco'">Economicas</button>
+    </div>
+
+    <div class="col-sm-2">
+      <button class="btn btn-success" (click)="filterBy='bkmotor'">Con Motor</button>
+    </div>
+
+    <div class="col-sm-2">
+      <button class="btn btn-success" (click)="filterBy='juniorrs'">Para Nenes</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <ul>
+    <li *ngFor="let img of (allImages | filterimages: filterBy )">
+      <a [routerLink]="['/image', img.id]">
+        <img class="img" src="{{ img.url }}" width="340" height="270">
+      </a>
+    </li>
+  </ul>
+</div>

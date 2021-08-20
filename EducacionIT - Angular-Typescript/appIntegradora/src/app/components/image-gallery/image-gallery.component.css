@@ -1,0 +1,16 @@
+.img {
+  margin: 6px;
+  border: 4px solid rgb(231, 170, 170);
+  box-shadow: rgb(225, 199, 199) 1px 1px 8px 1px;
+  cursor: pointer;
+}
+
+li {
+  display: inline;
+}
+
+ul {
+  padding: 0;
+  width: 1200px;
+  margin: 20px auto;
+}

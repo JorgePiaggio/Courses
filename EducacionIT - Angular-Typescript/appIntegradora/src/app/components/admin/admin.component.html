@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table-bordered table-inverse">
+        <tr>
+            <th>Owner Name</th>
+            <th>Email</th>
+            <th>Model</th>
+            <th class="text-right">Purchase Price</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let bike of bikes">
+            <td>
+                <a [routerLink]="['/admin/view/', bike.id]">{{bike.name}}</a>
+            </td>
+            <td>{{bike.email}}</td>
+            <td>{{bike.model}}</td>
+            <td class="text-right">{{bike.purchasePrice}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteBike( bike.id )">Delete</button></td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="validMessage != '' ">
+    <h3 class="has-info">{{ validMessage }}</h3>
+</div>
+
+<br><br>

@@ -1,0 +1,69 @@
+<div class="container">
+  <h2>Add Bike</h2>
+  <form [formGroup]="bikeform" (ngSubmit)="submitRegistration()">
+    <div *ngIf="validMessage != '' ">
+      <h3 class="has-info">{{ validMessage }}</h3>
+    </div>
+
+    <div class="form-group">
+      <label>Nick Name Twitter</label>
+      <input type="text" formControlName="name" class="form-control" autofocus required placeholder="@LeandroLuppo">
+      <div *ngIf="controles.name.errors?.pattern">
+        <p style="color: red;">Username Invalid</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="email" class="form-control" required placeholder="name@mail.com">
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" formControlName="phone" class="form-control" required placeholder="+54 011 1550669955">
+    <div *ngIf="controles.phone.errors?.pattern">
+      <p style="color: red;">Phone Number Not Valid</p>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>Serial Number</label>
+      <input type="text" formControlName="serialNumber" class="form-control" required placeholder="1546">
+    </div>
+
+    <div class="form-group">
+      <label>Purchase Price</label>
+      <input type="text" formControlName="purchasePrice" class="form-control" formControlName="purchasePrice" required>
+    </div>
+
+    <div class="form-group">
+      <label>Purchase Date</label>
+      <input type="text" formControlName="purchaseDate" class="form-control" required placeholder="12-12-2021">
+    </div>
+
+    <div class="form-group">
+      <label>Model Bike</label>
+      <select class="form-control" formControlName="model" required>
+        <option value="">Please Select a Model Bike</option>
+        <option *ngFor="let m of models" [value]="m">
+          {{ m }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Contact (true o false)</label>
+      <select class="form-control" formControlName="contact" required>
+        <option value="selecciona" >--Selecciona--</option>
+        <option value="true">SI</option>
+        <option value="false">NO</option>
+      </select>
+      <div *ngIf="controles.contact.value == 'selecciona'">
+        <p style="color: red;">Debes seleccionar SI o NO</p>
+      </div>
+    </div>
+  <br>
+    <button type="submit" class="btn btn-primary">Submit Form</button>
+  </form>
+  <br>
+</div>
