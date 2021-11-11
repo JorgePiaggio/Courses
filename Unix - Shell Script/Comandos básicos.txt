@@ -1,0 +1,440 @@
+************************************************************************************
+Variables de ambiente
+************************************************************************************
+
+Son valores dinámicos que se almacenan en el sistema y que afectan los programas o procesos que se ejecutan en un servidor. Existen en todos los sistemas operativos y su tipo puede variar. Las variables se pueden crear, editar, guardar y eliminar.
+
+Para setear una variable, se utiliza el nombre de la variable seguido del signo “=” y el valor que se desea asignar, sin dejar espacios intermedios: 
+
+HOME=/home/usuarios/curso
+
+Para acceder al contenido de una variable, por ejemplo, para utilizarlo como parámetro de un comando, se antepone al nombre el símbolo “$”:
+
+cd $HOME
+
+
+
+Además de las variables que pueda crear el usuario, un shell tiene definidas, por defecto, una serie de variables de ambiente, las más importantes son:
+
+PS1: Prompt primario.
+
+HOME: directorio de trabajo del usuario.
+
+PATH: rutas utilizadas para buscar comandos o programas.
+
+PWD: directorio activo.
+
+SHELL: Shell que estamos utilizando.
+
+HOSTNAME: nombre del equipo.
+
+
+
+****************************
+export
+****************************
+
+Las variables declaradas solo existirán en el Shell donde fueron creadas. Para permitir que estén disponibles tras iniciar un nuevo Shell, por ejemplo, con la ejecución de un script, se utiliza el comando export:
+
+export $HOME
+
+
+****************************
+set
+****************************
+
+Permite visualizar todas las variables declaradas en la sesión. 
+
+
+****************************
+unset
+****************************
+Permite eliminar variables. 
+
+unset HOME
+
+
+************************************************************************************
+COMANDOS BÁSICOS
+************************************************************************************
+
+****************************
+ls
+****************************
+Lista el contenido de un directorio.
+
+Las opciones que  podríamos considerar mas comunes son:
+
+-l (long): formato de salida largo, muestra mas información que el ls normal.
+-a (all): se muestran también archivos y directorios ocultos.
+-r (reverse): ordena el listado del mas antiguo al mas reciente.
+-t (time): ordena el listado en forma descendiente por fecha de modificación.
+-s (size): orden por el tamaño de los bloques.
+-h (human): muestra los tamaños de archivos en formato k/m/G.
+-R (recursive): lista recursivamente los subdirectorios.
+-1: lista los archivos y directorios en una sola columna.
+
+
+****************************
+mkdir
+****************************
+
+Crea (si los permisos lo permiten) el directorio o directorios que recibe como parámetros.
+
+
+****************************
+touch
+****************************
+
+Actualiza la fecha de última modificación de un archivo a la fecha actual, o crea un archivo vacío si el archivo pasado como parámetro no existe. Su sintaxis es:
+
+touch [opcion] <archivo1> [<archivo2> … <archivoN>]
+
+Las opciones más comunes son:
+
+-c: en caso que no exista el archivo, no crea uno nuevo.
+-t YYYYMMDDhhmm: usa una fecha especifica en lugar de la actual.
+-r: copia la fecha de modificación del primer archivo recibido como parámetro en el resto
+
+
+****************************
+cp
+****************************
+
+Copia un archivo desde un origen a un destino. Se ejecuta de la forma:
+
+cp <origen> <destino>
+
+Si “origen” y “destino” son archivos, copiará el primero en el segundo, mientras que, si “destino” es un directorio, creará una copia del origen dentro del directorio destino. Esta segunda forma, permite más de un origen (en ambos casos, si el destino ya existe lo sobreescribe).
+
+Para copiar de forma recursiva podemos utilizar la opción “-r”, que copiará tanto archivos como directorios completos en el destino.
+
+
+****************************
+mv
+****************************
+
+Renombra un archivo o directorio, o mueve un archivo de un directorio a
+otro. Dependiendo del uso, su sintaxis variara.
+
+mv <archivo1> [<archivo2> … <archivoN>] <directorio>: mueve los archivos especificados a un directorio.
+
+mv <archivo1> <archivo2>: renombra “archivo1” asignándole el nombre indicado en el parámetro 2.
+
+Al igual que con el caso de “cp”, si el destino ya existe lo sobreescribe.
+
+
+****************************
+rm
+****************************
+
+Elimina archivos (siempre que los permisos lo permitan). Su sintaxis es:
+
+rm [opciones] <archivo1> [<archivo2> … <archivoN>]
+
+La opciones más utilizadas son:
+
+-f (force): no formula preguntas antes de borrar archivos.
+-i (interactive): solicita confirmación antes de borrar cada archivo.
+-r (recursive): borra de forma recursiva el contenido de directorios y subdirectorios, además de eliminar el directorio en si.
+
+
+****************************
+chmod
+****************************
+
+Cambia los permisos de un archivo/directorio.
+
+Existen 2 formas o modos de asignación de permisos de usuario: octal y carácter.
+
+Modo Octal:
+
+Asigna un valor numérico a cada uno de los permisos (lectura = 4, escritura = 2 y ejecución = 1) determinándose así un número de tres dígitos octales (entre 0 y 7) correspondientes a la sumatoria de los permisos otorgados a cada uno de los modos de acceso. Por ejemplo: 
+
+chmod 777 archivo.txt
+
+
+****************************
+date
+****************************
+
+Esta orden imprime en pantalla la fecha y la hora del sistema. 
+
+date [+“formato”]
+
+
+****************************
+ps
+****************************
+
+Informa el estado de los procesos en ejecución en el sistema.
+
+El comando permite aplicarle opciones, a partir de las cuales se obtiene diferente información. Entre las más comunes se encuentran:
+
+Sin opciones, nos informa los procesos en la sesión de trabajo actual. 
+
+Con la opción -f se nos proporciona información mas detallada.
+
+La opción -e muestra todos los procesos en ejecución.
+
+La opción “-u <usuario>” nos muestra los procesos lanzados por un usuario específico.
+
+
+****************************
+kill
+****************************
+
+Este comando es utilizado para enviar señales a los procesos en ejecución.
+
+Si bien las señales más usuales que se envían son SIGTERM (15) o SIGKILL (9), kill no necesariamente tiene que ver con “matar” un proceso, ya que se pueden enviar otro tipo de señales como SIGHUP (1), SIGSTP (20), SIGINT (2), SIGCONT (18), SIGUSR (16), etc.
+
+Su sintaxis es: kill -<señal> <PID> (si no se especifica la señal, se envia por defecto SIGTERM).
+
+Este comando solo puede ser ejecutado por el usuario que lanzó el proceso o por un superusuario.
+
+
+****************************
+cat
+****************************
+
+Su función es mostrar en pantalla el contenido de uno o mas archivos de texto concatenados.
+
+
+****************************
+more
+****************************
+
+También sirve para visualizar archivos en pantalla pero, a diferencia de cat, los muestra “paginados”, es decir, muestra solo el contenido que cabe dentro de la pantalla y aguarda la confirmación del usuario para pasar a la ´pagina siguiente.
+
+
+****************************
+less
+****************************
+
+Similar a more, con la diferencia que permite retroceder a páginas anteriores.
+
+
+****************************
+cut
+****************************
+
+Se utiliza para recortar segmentos “verticales” de las líneas de un texto.
+
+Se pueden determinar los segmentos de texto a extraer, indicándolos como un rango de alguna de las siguientes maneras:
+
+Bytes (-b rango).
+
+Caracteres (-c rango).
+
+Campos (-f rango), separados por un delimitador (-d, donde el valor por defecto es espacio/tabulador).
+
+
+****************************
+cmp
+****************************
+
+Compara el contenido de dos archivos, imprimiendo en pantalla la posición de la primera diferencia encontrada. Si no produce ninguna salida, significa que ambos archivos son iguales.
+
+
+****************************
+diff
+****************************
+
+Compara el contenido de dos archivos, imprimiendo en pantalla todas las líneas que difieren entre uno y otro.
+
+
+****************************
+grep
+****************************
+
+Esta es quizás una de las ordenes mas utilizadas en cualquier sistema Unix. Busca un patrón (que recibe como parámetro) en un archivo, e imprime en pantalla la línea completa donde ese patrón aparece. Su sintaxis es sencilla: 
+
+grep [opt] <patrón> <archivo> 
+
+Algunas de las opciones más utilizadas son:
+
+-v: imprime las líneas que no coinciden con el patrón.
+-i: no distingue mayúsculas/minúsculas.
+-c: imprime solamente la cantidad de coincidencias encontradas.
+-n: imprime la línea donde aparece el patrón, indicando además el número de línea.
+
+
+****************************
+sort
+****************************
+
+Ordena las líneas de un archivo de texto, clasificándolas de acuerdo a un patrón determinado, y muestra el resultado en pantalla. Su sintaxis es: 
+
+sort [opt] <archivo> 
+
+Por defecto, si no se le pasa ninguna opción, ordena las líneas alfabéticamente. Otras opciones posibles son:
+
+-n: interpreta los valores como numéricos.
+-r: invierte el orden.
+-f: no distingue entre mayúsculas y minúsculas.
+-k: ordena según un número específico de columna.
+
+
+****************************
+uniq
+****************************
+
+El comando uniq excluye todos los renglones adyacentes duplicados menos uno; es decir, elimina renglones repetidos consecutivos. Su sintaxis es: 
+
+uniq [opt] <archivo_entrada> [<archivo_salida>]
+
+Las posibles opciones son:
+
+-u: muestra solo las líneas que no están duplicadas.
+-d: muestra solo las líneas duplicadas, una vez.
+-c: muestra todas las líneas una vez, indicando la cantidad de ocurrencias.
+
+Es importante puntualizar que solamente encuentra duplicidad en líneas adyacentes, y por esta razón, es muy común que se utilice junto con sort.
+
+
+****************************
+find
+****************************
+
+Localiza archivos en el filesystem que cumplan con determinadas condiciones. Su sintaxis básica es: 
+
+find <ruta> <condiciones> [<acción>]
+
+La búsqueda se realiza, de forma recursiva, a partir del directorio indicado por <ruta>.
+
+Algunas de las condiciones de búsqueda que podemos utilizar son:
+
+-name: busca archivos cuyo nombre coincida con el patrón indicado. Por ejemplo: find /etc –name “*.txt”
+
+-type: busca un tipo especifico de archivos, “f” = archivos regulares, “d” = directorios, etc.
+
+-size: busca por tamaño: find ~ -size +10k
+
+-mtime: busca por fecha de última modificación: find . -mtime -10
+
+-empty: busca archivos o directorios vacíos. 
+
+-perm: busca archivos con determinados permisos: find . -perm 644
+
+-user: busca archivos que pertenezcan a determinado usuario: find / -user “curso”
+
+-group: busca archivos que pertenezcan a determinado grupo: find /home -group “curso”
+
+-not: invierte el patrón de búsqueda: find . -not -empty
+
+Adicionalmente, se le puede indicar diferentes acciones a realizar cuando encuentra coincidencias en los parámetros de búsqueda. Algunos ejemplos de estas son:
+
+-delete: elimina los archivos que encuentre.
+
+-exec: ejecuta un comando específico. 
+
+-print: imprime en pantalla el nombre del archivo encontrado.
+
+
+****************************
+alias
+****************************
+
+Este comando permite reemplazar una palabra o serie de palabras, con otra. SU uso principal es para abreviar ordenes o para agregar parámetros por defecto a un comando que se utiliza con mucha frecuencia.
+
+Este alias, se mantiene por el tiempo que dure la sesión del usuario o se puede incluir en los archivos de profile, para que este disponible cada vez que sea iniciada su sesión.
+
+Su sintaxis es: alias <nombre>=“<comandos>”. Por ejemplo: alias l=“ls -ltr”
+
+Ejecutado sin parámetros, muestra un listado de los alias existentes para esa sesión.
+
+
+****************************
+echo
+****************************
+
+Imprime por la salida estándar (pantalla) los parámetros que recibe. Su uso más común es para imprimir mensajes en Shell Scripts o para consultar el contenido de variables de entorno.
+
+
+****************************
+clear
+****************************
+
+Limpia el texto de la pantalla, devolviendo el cursor al inicio de la consola.
+
+
+****************************
+sleep
+****************************
+
+Suspende la ejecución durante la cantidad de segundos que reciba como parámetro.
+
+
+****************************
+nohup
+****************************
+
+Ejecuta comandos en segundo plano (sin perder el control de la consola). Su sintaxis es: 
+
+nohup <comando>
+
+Mantiene la ejecución de procesos aunque la terminal desde donde se lanzó se desconecte del sistema. Nos permite dejar trabajos en marcha aunque no estemos físicamente conectados al ordenador.
+
+
+
+************************************************************************************
+Stdin
+************************************************************************************
+
+Para redireccionar stdin se utiliza el símbolo “<”, por ejemplo:
+
+sftp 1.1.1.1 < login.txt
+
+Esto indica que el comando sftp, recibirá la información de entrada del archivo login.txt en lugar de la consola.
+
+Otra forma de redireccionar la entrada es utilizando “<<” y definiendo un bloque de información delimitado por una etiqueta:
+
+sqlplus user/pass@database <<EOF
+Comando1;
+Comando2;
+EOF
+
+
+************************************************************************************
+Stdout
+************************************************************************************
+
+Para redireccionar stdout se utilizan los símbolos “>” y “>>”, por ejemplo:
+
+comando > salida.log o comando >> salida.log
+
+En ambos casos, la salida de “comando” se escribe en el archivo “salida.log”, la diferencia radica en que, en el primer caso, si el archivo “salida.log” ya existe, lo sobreescribe, mientras que con la segunda forma, la salida del comando se añadirá al final del archivo.
+
+Un caso especial es cuando se desea descartar la salida para que no se muestre ni almacene, para ello utilizaremos el descriptor de descarte:
+
+comando > /dev/null
+
+
+************************************************************************************
+pipes
+************************************************************************************
+
+Otra forma de direccionamiento es cuando queremos que la salida de un comando sea la entrada de otro, para lo cual utilizaremos el pipe “|”:
+
+comando1 | comando2
+
+En este caso, la entrada de “comando2” será la salida de “comando2”.
+
+La ejecución se realiza de izquierda a derecha y se puede concatenar en cascada tantes veces como se requiera, de manera que la entrada de un comando sea la salida del anterior y a su vez su salida sea la entrada de otro:
+
+head -100 archivo.txt | cut –d”;” –f2 | sort | uniq 
+
+
+****************************
+xargs
+****************************
+Si bien xargs es un comando en si mismo, suele utilizarse junto con el pipe, y su objetivo es tomar la entrada estándar y utilizarla como parámetros de un comando. Por ejemplo, si ejecutamos:
+
+find . –name “*.txt” | grep abcd
+
+El grep se ejecutará sobre la salida del find. Sin embargo, si usáramos:
+
+find . –name “*.txt” | xargs grep abcd
+
+La salida del find se convierte en parámetros del grep, con la cual la cadena “abcd” se buscará en todos los archivos que devuelva find.
+
