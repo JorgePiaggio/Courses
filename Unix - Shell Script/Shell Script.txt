@@ -1,0 +1,441 @@
+**********************************************************************
+SHELL SCRIPT
+**********************************************************************
+
+Para ejecutar un Shell script, basta con escribir el nombre del archivo seguido de los parámetros que se requieran, tal como si se tratase de un comando del sistema.
+
+Cuando se ejecuta un Shell Script, no se realiza sobre el Shell en el que estamos trabajando, sino que se abre un nuevo entorno exclusivo para su ejecución, de esta manera, las modificaciones de entorno que el script realice, como por ejemplo setear o modificar variables de ambiente, no afectarán a nuestro entorno de trabajo.
+
+Si necesitamos que el script se ejecute en nuestro entorno en lugar de abrir uno nuevo, debemos anteponer a su ejecución un punto (.) y un espacio
+
+
+Un script puede contener comentarios, para ello se utiliza el carácter “#”.
+
+Es posible indicar al script con que Shell debe ejecutarse, esto debe hacerse siempre en la primera línea, indicando el Shell deseado, antecedido por los caracteres “#!”
+
+Si no se especifica lo contrario, se utilizará el Shell por defecto del usuario que lo ejecuta.
+
+
+
+***********************************
+exit
+***********************************
+
+Todo Shell Script envía al sistema operativo un código de finalización al terminar de ejecutarse.
+
+Por convención, el código 0 corresponde a una finalización exitosa, mientras que cualquier otro valor corresponde a finalización con error.
+
+El comando exit no solamente finaliza el script en cualquier punto, sino que además nos permite indicarle al SO el código de salida.
+
+Si no se incluye exit en algún punto del script, este finalizará cuando se realice el último comando en el flujo de ejecución dando como código de finalización un 0.
+
+
+**********************************************************************
+Parámetros y variables
+**********************************************************************
+
+Como cualquier programa, un Shell script puede recibir parámetros desde la línea de comandos para utilizarlos en su ejecución.
+
+Para visualizar el contenido de un parámetro, se utiliza el símbolo “$” seguido de un número entero.
+
+De esta forma, $0 contiene el nombre con el que se ha invocado al script, $1 contiene el valor del primer parámetro, $2 el segundo, etc.
+
+En el caso de que el script reciba más de nueve parámetros, a partir del 10 el número indicador deberá indicarse entre llaves, por ejemplo: ${10}, ${11}, ${12}, etc. Ya que si usaramos, por ejemplo, $10 el script lo entenderá como: “el contenido del parámetro $1 con un 0 concatenado al final”
+
+
+***********************************
+shift
+***********************************
+
+Este comando desplaza los parámetros una posición hacia atrás. De esta manera, el valor de $2, pasa a ser $1, $3 pasa a ser $2, etc.
+
+El cambio no afecta al contenido de $0, por lo tanto, al utilizar shift el valor contenido originalmente en $1 se perderá. 
+
+Además, también se le puede agregar un número distinto a 1 para indicarle cuantas posiciones tiene que desplazar los parámetros.
+
+Por ejemplo, “shif 3” desplaza tres posiciones, de tal forma que $4 pasa a ser $1, $5 se mueve a $2, etc.
+
+
+
+***********************************
+Otras variables útiles
+***********************************
+
+$?: contiene el valor de salida de la ultima orden ejecutada.
+
+$$: identifica el process ID (PID) de este Shell.
+
+$*: todos los parámetros recibidos, comenzando por $1.
+
+$@: si bien su comportamiento no es exactamente igual, a fines prácticos podemos decir que es equivalente al anterior.
+
+$#: cantidad de parámetros recibidos.
+
+${#VAR}: muestra la longitud (cantidad de caracteres) de la variable VAR.
+
+
+
+***********************************
+arrays
+***********************************
+
+El shell permite trabajar con arrays (o listas) mono dimensionales. El primer elemento del array está numerado con el 0.
+
+No hay un tamaño límite para un array, y la asignación de valores se puede hacer de forma alterna.
+
+La sintaxis para declarar un array es la siguiente:
+
+nombre_array=(valor1 valor2 … valorN)		#crea e inizializa un array 
+nombre_array[x]=valor				#asigna valor al elemento X
+
+
+Para acceder a los elementos de la lista, se utiliza la siguiente sintaxis
+
+${nombre_array[X]}			#para acceder al elemento X
+ 
+${nombre_array[*]}			#para consultar todos los elementos
+
+${#nombre_array[*]}			#para conocer la cantidad de elementos
+
+Si al referenciar a un array no se utiliza subíndice se considera que se está referenciando a su primer elemento (elemento 0).
+
+
+
+***********************************
+read
+***********************************
+
+El comando read permite setear el valor de una variable de forma interactiva. Lee la entrada estándar (teclado) y almacena los caracteres leídos en una variable cuyo nombre se pasa como parámetro:
+
+read var
+
+Al llegar a este comando el flujo de ejecución se detiene y queda a la espera de que el usuario presione ENTER.
+
+Una vez que esto ocurre, la variable “var” contendrá todos los caracteres que se tipearon en el teclado previos al ENTER.
+
+
+
+***********************************
+Sustitución de comandos
+***********************************
+
+Los caracteres de sustitución permiten remplazar un comando por el resultado de su ejecución.
+
+Este mecanismo se utiliza para insertar en la línea de comandos Unix el resultado de otra orden. El uso más común que se le puede dar es almacenar en una variable el resultado de un comando, o bien pasarlo como parámetro de otro.
+
+Para hacer esto, el comando se debe indicar entre comillas invertidas. Otra forma de indicarlo es entre paréntesis precedidos por el signo “$” aunque esta opción no funciona en shells demasiado antiguos:
+
+LISTA=`ls -1`				# almacena en LISTA el resultado de ls
+
+echo $(date +“%d/%m/%Y”)	# imprime en pantalla la fecha
+
+
+
+**********************************************************************
+Operaciones lógicas y aritméticas
+**********************************************************************
+
+***********************************
+test
+***********************************
+
+Es un comando que permite evaluar expresiones condicionales. 
+
+Permite dos formas de ejecución, ya sea utilizando el comando “test” o, la más comúnmente utilizada, encerrando la expresión a evaluar entre corchetes:
+
+test expresión o [ expresión ]
+
+Ambas formas son equivalentes. Es importante recalcar que para utilizar la segunda forma tiene que haber un espacio antes y después de cada corchete, de esta forma la sintaxis [expresión] producirá un error de ejecución.
+
+Permite una gran cantidad de operaciones, de comparación, tanto de valores numéricos, valores string o archivos y directorios.
+
+
+
+***********************************
+Operadores numéricos
+***********************************
+
+ar1 –eq var2: devuelve verdadero si var1 y var2 son iguales.
+
+var1 –ne var2: devuelve verdadero si var1 y var2 son distintos.
+
+var1 –gt var2: devuelve verdadero si var1 es mayor que var2.
+
+var1 –lt var2: devuelve verdadero si var1 es menor que var2.
+
+var1 –ge var2: devuelve verdadero si var1 es mayor o igual que var2.
+
+var1 –le var2: devuelve verdadero si var1 es menor o igual que var2.
+
+
+
+***********************************
+Operadores con archivos
+***********************************
+
+-e archivo: devuelve verdadero si archivo existe.
+
+-f archivo: devuelve verdadero si archivo existe y es un archivo normal.
+
+-d archivo: devuelve verdadero si archivo existe y es un directorio.
+
+-r archivo: devuelve verdadero si archivo tiene permisos de lectura.
+
+-w archivo: devuelve verdadero si archivo tiene permisos de escritura.
+
+-x archivo: devuelve verdadero si archivo tiene permisos de ejecución.
+
+-s archivo: devuelve verdadero si archivo no está vacío.
+
+
+
+***********************************
+Operadores con strings
+***********************************
+
+Al trabajar con variables de tipo string, es conveniente utilizar las comillas para evitar errores.
+
+-s “string”: devuelve verdadero si el string es no vacio.
+
+-z “string”: devuelve verdadero si el string es vacio.
+
+“string1” = “string2”: devuelve verdadero si string1 y string2 son iguales.
+
+“string1” != “string2”: devuelve verdadero si string1 y string2 son distintos.
+
+
+
+***********************************
+Otros operadores
+***********************************
+
+! [ expresión ]: (not) invierte el resultado del test.
+
+[ expresión –a expresión ]: operador AND binario.
+
+[ expresión –o expresión ]: operador OR binario.
+
+[ expresión ] && [ expresión ]: equivalente a -a.
+
+[ expresión ] || [ expresión ]: equivalente a -o.
+
+
+***********************************
+expr
+***********************************
+
+Realiza operaciones aritméticas simples y devuelve el resultado. Su sintaxis es:
+
+expr “operación”
+
+Permite realizar sumas, restas, multiplicaciones, divisiones y módulo, pero solamente operando con números enteros, con lo cual no entán permitidas operaciones como por ejemplo: 
+
+expr “10 * 1.5”
+
+Además, si bien es una opción muy poco utilizada, algunas versiones de expr permiten operar con strings, por ejemplo buscando expresiones regulares, substrings, longitud de palabras, etc.
+
+
+
+***********************************
+if
+***********************************
+
+Shell script permite introducir controles de flujo para que ciertos bloques de código se ejecuten solo cuando se cumplan ciertas condiciones. Para ello se utiliza la orden if, la cual tiene la siguiente sintaxis:
+
+if [ expresión ]	# suele ser un test, pero no necesariamente siempre
+then
+	#comandos  a ejecutar si se cumple la condición
+else
+	#comandos  a ejecutar si no se cumple
+fi
+
+
+
+If también permite anidar condiciones con la utilización de “elif” de esta forma, estas dos sentencias son equivalentes
+
+		if [ expresión1 ]			if [ expresion1 ]
+		then					then
+			comando				comando
+			…					…
+		elif [ expresion2 ]			else
+		then						if [ expresion2 ]
+			comando				then
+			…						comando
+		fi							…
+								fi
+							fi
+
+***********************************
+case
+***********************************
+
+Esta herramienta nos permite generar un flujo distinto en base al valor de una expresión (generalmente el contenido de una variable). Es el equivalente a utilizar varios if…elif encadenados.
+
+Su sintaxis es:
+
+case $var in
+	valor1) comandos
+		;;
+	valor2)  comandos
+		;;
+	…
+	…
+esac
+
+
+
+Case permite la opción de definir el mismo bloque de código para más de un valor, en ese caso los diferentes valores posibles se separan por un pipe “|”.
+
+También es posible definir una salida por default, cuando el valor no coincide con ninguno de los patrones, para ello se usa el carácter “*”
+
+case $var in
+	valor1 | valor2 | valor 3)
+		#bloque de código a ejecutar
+		;; 
+	*)
+		#código por defecto
+		;;
+esac
+
+
+***********************************
+while
+***********************************
+
+La estructura de control while, evalúa una condición y permite ejecutar un bloque de código tantas veces como sea necesario mientras que la condición se cumpla.
+
+La condición se evalúa al principio de la ejecución, por lo tanto el bloque de código puede no ejecutarse nunca. Su sintaxis es:
+
+while [ condición ]
+do
+	comando1
+	comando2
+	…
+	comandoN
+done
+
+
+***********************************
+for
+***********************************
+
+Con la orden for se ejecutan bloques de código, permitiendo que en cada iteración una determinada variable tome un valor distinto de una lista determinada.
+
+La sintaxis es la siguiente:
+
+for variable in lista
+do
+	…
+	…
+done
+
+
+***********************************
+break y continue
+***********************************
+
+Las órdenes break y continue sirven para interrumpir la ejecución secuencial del cuerpo de un bucle.
+
+break transfiere el control a la orden que sigue a done, haciendo que el bucle termine antes de tiempo.
+
+continue transfiere el control a done, haciendo que se evalúe de nuevo la condición, prosiguiendo el bucle.
+
+En ambos casos, las órdenes del cuerpo del bucle siguientes a estas sentencias, no se ejecutan.
+
+Lo normal es que formen parte de una sentencia condicional, como if.
+
+
+**********************************************************************
+Funciones
+**********************************************************************
+
+Otra de las características más interesantes de Shell script es que permite la declaración de funciones. Una herramienta que ahorra mucho trabajo y esfuerzo ya que permite la reutilización de código.
+
+Para declarar las funciones existen dos maneras distintas dependiendo el Shell que se utilice, la mayoría de los Shell aceptan las dos formas, sin embargo algunos (en especial los más antiguos) solo aceptan una de las dos.
+
+Primera forma: nombre de función + () + {}:
+
+mi_funcion () 
+{
+	comandos
+	…
+	…
+}
+
+
+Segunda forma: palabra clave “function” + nombre de función + () + {}:
+
+function mi_funcion () 
+{
+	comandos
+	…
+	…
+}
+
+Es muy importante considerar que es necesario definir las funciones antes de utilizarlas, por lo cual es una costumbre bastante sana, definir todas las funciones que vamos a usar al principio del script.
+
+Una vez que están definidas, las funciones se utilizan dentro del script como si se tratase de un comando más.
+
+
+***********************************
+Ámbito de las variables
+***********************************
+
+Por regla general todas las variables en el script tienen ámbito global, tanto las definidas dentro del cuerpo principal, como las que se definen dentro de una función.
+
+Para que una variable definida dentro de una función solo tenga ámbito dentro de la misma, hay que indicarlo expresamente con la sentencia local
+
+function mi_funcion()
+{
+	VAR1=valor		# variable global, puede ser vista y utilizada en todo el script
+	local VAR2=valor	# variable local, solo existe dentro de mi_funcion
+	…
+	…
+}
+
+
+***********************************
+Parámetros
+***********************************
+
+Al igual que ocurre con el script, las funciones también pueden recibir parámetros y, también se utilizan los mismos operadores para manipularlos. Es decir, dentro de la función, por ejemplo, $1 hace referencia al primer parámetro que recibió la función, $2 al segundo, $# a la cantidad de parámetros recibida, etc.
+
+De esto se desprende que dentro de una función no podremos manipular los parámetros recibidos por el script a menos que guardemos su valor en una variable global o se lo pasemos como parámetro a una función.
+
+Las únicas dos excepciones a esta regla son $0 y $$ que siempre hacen referencia al nombre y al PID del script, respectivamente, en cualquier ámbito que se utilicen.
+
+
+
+***********************************
+Retorno
+***********************************
+
+e la misma forma que un script, las funciones también envían un código de salida que, por defecto, de no especificarse lo contrario, será 0.
+
+También, al igual que pasa con los script, una función puede finalizarse en cualquier punto de su ejecución y definirse un código de retorno distinto a 0. 
+
+La diferencia radica en que en este caso, deberemos utilizar el comando return en lugar de exit, ya que ejecutar exit dentro de una función también daría por finalizado el script.
+
+Es decir, que a diferencia de lo que ocurre con la mayoría de lenguajes de programación, la función no retorna valores, sino códigos de ejecución, por lo tanto si queremos pasar un valor de una función al cuerpo principal del script deberemos usar variables globales.
+
+
+
+***********************************
+Depuración
+***********************************
+
+Una buena idea para depurar los programas es la opción -x en la primera línea:
+
+#!/bin/bash -x
+
+Como consecuencia, durante la ejecución se va mostrando cada línea del script después de sustituir las variables por su valor, pero antes de ejecutarla.
+
+Otra posibilidad es utilizar la opción -v que muestra cada línea como aparece en el script (tal como está en el archivo), antes de ejecutarla:
+
+#!/bin/bash –v
+
+También se pueden utilizar ambas en conjunto:
+
+#!/bin/bash –vx
+
+
